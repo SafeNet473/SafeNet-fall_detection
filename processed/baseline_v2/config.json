@@ -1,0 +1,35 @@
+{
+  "seed": 42,
+  "data_root": "C:\\Users\\user\\Documents\\UM\\EECS 473\\Final_project\\fall_detection\\data",
+  "sampling_rate_hz": 200,
+  "channels": "ADXL345 xyz",
+  "counts_to_g": 0.00390625,
+  "filter": {
+    "order": 4,
+    "cutoff_hz": 5,
+    "implementation": "sosfiltfilt",
+    "causal": false
+  },
+  "window_size": 200,
+  "stride": 100,
+  "event_locator": "raw_magnitude_argmax",
+  "endpoint_policy": "shift window inside recording; no padding; ADL incomplete tails dropped",
+  "n_trials": 4500,
+  "n_windows": 103239,
+  "python": "3.12.10",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "code_sha256": "026451969c899336bfff4305060a781e829bef35367f0abe6c8f5b3d9f3dec06",
+  "validation_fraction": 0.2,
+  "test_fraction": 0.2,
+  "baseline": "max magnitude >= threshold; validation-tuned, no fitted training parameters",
+  "subject_mismatch_policy": "exclude",
+  "ignored_text_files": [
+    "Links videos SisFall youtube.txt",
+    "Readme.txt"
+  ]
+}

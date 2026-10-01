@@ -1,0 +1,48 @@
+{
+  "features": [
+    "mag_mean",
+    "mag_std",
+    "mag_rms",
+    "mag_peak",
+    "mag_ptp",
+    "jerk_abs_mean",
+    "jerk_std",
+    "jerk_rms",
+    "jerk_abs_peak",
+    "pre_variance",
+    "post_variance",
+    "gyro_mean",
+    "gyro_std",
+    "gyro_rms",
+    "gyro_peak",
+    "ga_C2",
+    "ga_C8",
+    "ga_C13",
+    "ga_parallel_peak",
+    "ga_parallel_std",
+    "ga_parallel_ptp"
+  ],
+  "feature_selection": "fixed a priori; no outcome-based feature selection",
+  "logistic_C": [
+    0.01,
+    0.1,
+    1,
+    10
+  ],
+  "tree_depth": [
+    2,
+    3,
+    4
+  ],
+  "tree_min_samples_leaf": [
+    200,
+    50
+  ],
+  "class_weight": "balanced",
+  "seed": 473,
+  "threshold": "max validation balanced accuracy; lowest threshold ties",
+  "model_selection": "one best per family by validation balanced accuracy; stable grid-order ties",
+  "refit_on_train_plus_validation": false,
+  "rotation_seed": 473,
+  "rotation_replicates": 10
+}

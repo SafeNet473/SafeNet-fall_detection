@@ -1,0 +1,28 @@
+feature,additions,multiplications,square_roots,notes
+baseline / mag_peak,400,600,200,N−1 comparisons
+mag_mean,599,601,200,running sum
+mag_std,799,803,201,running sum and sum squares
+mag_rms,599,801,201,"can optimize: sum XYZ squares directly, then one final sqrt"
+mag_ptp,401,600,200,2(N−1) comparisons
+jerk_abs_mean,797,800,200,B + J differences/scales + mean; J abs
+jerk_std,996,1001,201,signed jerk; B + J differences/scales + std over J
+jerk_rms,797,999,201,B + J differences/scales + RMS over J
+jerk_abs_peak,599,799,200,J abs and J−1 comparisons
+pre_variance,399,403,100,magnitude of first 100 samples only
+post_variance,399,403,100,magnitude of last 100 samples only
+gyro_mean,599,601,200,gyro magnitude front-end
+gyro_std,799,803,201,gyro magnitude front-end
+gyro_rms,599,801,201,direct XYZ-square optimization possible
+gyro_peak,400,600,200,N−1 comparisons
+gyro_ptp,401,600,200,2(N−1) comparisons
+C2,200,400,200,"x/z norm, then max"
+C3,5,3,1,6(N−1) min/max comparisons; three axis ranges
+C8,799,406,1,two axis sum/squares streams
+C9,1199,609,1,three axis sum/squares streams
+C13,597,401,200,x/z norms + trapezoids
+ga_C2,3000,3600,400,aligned front-end + max; N reciprocals
+ga_C8,3799,3609,201,residual-vector moments; no per-sample perpendicular sqrt; N reciprocals
+ga_C13,3397,3601,400,aligned front-end + trapezoids; N reciprocals
+ga_parallel_peak,2000,2400,200,"parallel front-end; N reciprocals, abs/max"
+ga_parallel_std,2399,2603,201,parallel front-end + std; N reciprocals
+ga_parallel_ptp,2001,2400,200,parallel front-end + range; N reciprocals

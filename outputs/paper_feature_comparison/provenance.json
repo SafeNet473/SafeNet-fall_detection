@@ -1,0 +1,34 @@
+{
+  "source_run": "C:\\Users\\user\\Documents\\UM\\EECS 473\\Final_project\\fall_detection\\processed\\baseline_v2",
+  "source_sha256": {
+    "X_filtered.npy": "237473609b95ce8cf2d5714de121137bbb012d985963d28ce533958717e76230",
+    "windows.csv": "7f2c92cbe9d3ab3cc150e06c2dce74a6a61c336d7d42dfa70b0c1caf3f99413d",
+    "labels_groups_splits.npz": "c93cfdcd7ce3c6ce4230b9db24778e525d957b6fb10d15d44b2ce47d2b41d4a7",
+    "split_subjects.json": "1ba0d067a5755ebd7b706152b0e7839913d099a043aa89823bd0115fa5d1979c",
+    "config.json": "835035c3e739ee9b769daa28d70f732c33c99fc1f9bd00e2094cf1b0ac26aef3",
+    "baseline_metrics.json": "bf3cda0c5d772bc9d8a1e132464b7c60c8fdf3cf63671036546c8fc9fabffe2c",
+    "scores_filtered.npy": "c9cbb707847a65a19e66171c64c827ffed92221c0314b050cb813b2eb6ffdb08"
+  },
+  "source_files_unchanged": true,
+  "feature_window_samples": 200,
+  "filter": {
+    "order": 4,
+    "cutoff_hz": 5,
+    "implementation": "sosfiltfilt",
+    "causal": false
+  },
+  "sample_rate_hz": 200,
+  "c3_convention": "Euclidean norm of axis-wise ranges, consistent with C1 displayed norm",
+  "std_ddof": 1,
+  "c13_integration": "trapezoidal, dx=1 sample",
+  "equivalent_conventions": {
+    "C3_literal_RMS": "C3 / sqrt(3)",
+    "C8_population_std": "C8 * sqrt(199/200)",
+    "C9_population_std": "C9 * sqrt(199/200)",
+    "C13_seconds": "C13 / 200"
+  },
+  "threshold_selection": "validation only; max balanced accuracy; lowest threshold on ties",
+  "pr_auc": "trapezoidal sklearn auc(recall, precision); AP reported separately",
+  "source_code_sha256": "9fb9b4226f290d2708f35770f2055b8ce5943a71403e8bb93b66c83b5e3b007c",
+  "equations_sha256": "e16dc5dade9cd2f0484301509087718f61d2b2b5704f8d56544f5455fc844dbc"
+}

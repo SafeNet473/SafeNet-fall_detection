@@ -1,0 +1,14 @@
+{
+  "selected_on": "validation",
+  "objective": "maximum balanced accuracy",
+  "prediction_rule": "score >= threshold",
+  "tie_break": "lowest threshold",
+  "thresholds": {
+    "baseline": 2.209465980529785,
+    "C2": 1.2305261218248633,
+    "C3": 2.6353216699284863,
+    "C8": 0.44745829567402573,
+    "C9": 0.7618619401195427,
+    "C13": 124.62575210263492
+  }
+}

@@ -1,0 +1,3 @@
+This diagnostic run stopped during ingestion because of whitespace-only trailing lines.
+The parser was fixed and tested. Do not use this directory for evaluation.
+The subsequent full run is processed/baseline_v2.

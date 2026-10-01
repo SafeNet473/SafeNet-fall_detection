@@ -1,0 +1,3 @@
+model,candidate_features,required_features,window_samples,window_seconds,feature_names,independent_feature_upper_bound_additions,independent_feature_upper_bound_multiplications,independent_feature_upper_bound_square_roots,shared_gravity_normalization_reciprocals,model_multiplications,model_additions,model_max_comparisons,model_sqrt,model_division
+logistic_regression,21,21,200,1,mag_mean;mag_std;mag_rms;mag_peak;mag_ptp;jerk_abs_mean;jerk_std;jerk_rms;jerk_abs_peak;pre_variance;post_variance;gyro_mean;gyro_std;gyro_rms;gyro_peak;ga_C2;ga_C8;ga_C13;ga_parallel_peak;ga_parallel_std;ga_parallel_ptp,25778,28828,4408,200,21,21,1,0,0
+decision_tree,21,5,200,1,jerk_abs_mean;jerk_rms;jerk_abs_peak;ga_C2;ga_parallel_peak,7193,8598,1201,200,0,0,4,0,0

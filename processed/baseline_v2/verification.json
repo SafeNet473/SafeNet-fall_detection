@@ -1,0 +1,7 @@
+{
+  "verified_trials": 4500,
+  "verified_windows": 103239,
+  "raw_source_hashes_unchanged": true,
+  "subject_partitions_disjoint": true,
+  "saved_windows_match_recomputed_signals": true
+}

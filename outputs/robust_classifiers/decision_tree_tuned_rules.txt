@@ -1,0 +1,23 @@
+Inputs cast to float32. Fixed positive-score threshold: 0.7705231308225133
+if ga_C2 <= 0.9452756047:
+  if ga_C2 <= 0.7616187334:
+    if jerk_abs_peak <= 39.68746758:
+      leaf score=0.002977986738 => ADL
+    else:
+      leaf score=0.3890564065 => ADL
+  else:
+    if jerk_rms <= 9.771021843:
+      leaf score=0.7168010491 => ADL
+    else:
+      leaf score=0 => ADL
+else:
+  if jerk_abs_mean <= 14.05581713:
+    if ga_C2 <= 1.076025665:
+      leaf score=0.7705231308 => FALL
+    else:
+      leaf score=0.9977003328 => FALL
+  else:
+    if ga_parallel_peak <= 3.369724512:
+      leaf score=0 => ADL
+    else:
+      leaf score=0.8602542448 => FALL

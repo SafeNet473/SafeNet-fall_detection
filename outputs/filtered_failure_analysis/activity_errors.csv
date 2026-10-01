@@ -1,0 +1,69 @@
+split,error_type,activity_code,description,windows,errors,error_rate,share_of_split_errors,trials,trials_with_errors,subjects_with_errors
+validation,false_positive,D01,Walking slowly,1584,0,0.0,0.0,8,0,0
+validation,false_positive,D02,Walking quickly,1589,0,0.0,0.0,8,0,0
+validation,false_positive,D03,Jogging slowly,1592,345,0.21670854271356785,0.16953316953316952,8,7,7
+validation,false_positive,D04,Jogging quickly,1592,1203,0.7556532663316583,0.5911547911547912,8,8,8
+validation,false_positive,D05,Walking upstairs and downstairs slowly,1956,0,0.0,0.0,40,0,0
+validation,false_positive,D06,Walking upstairs and downstairs quickly,1219,269,0.2206726825266612,0.1321867321867322,25,25,5
+validation,false_positive,D07,"Slowly sit in a half height chair, wait a moment, and up slowly",915,0,0.0,0.0,40,0,0
+validation,false_positive,D08,"Quickly sit in a half height chair, wait a moment, and up quickly",917,0,0.0,0.0,40,0,0
+validation,false_positive,D09,"Slowly sit in a low height chair, wait a moment, and up slowly",918,0,0.0,0.0,40,0,0
+validation,false_positive,D10,"Quickly sit in a low height chair, wait a moment, and up quickly",919,0,0.0,0.0,40,0,0
+validation,false_positive,D11,"Sitting a moment, trying to get up, and collapse into a chair",913,13,0.014238773274917854,0.0063882063882063885,40,6,4
+validation,false_positive,D12,"Sitting a moment, lying slowly, wait a moment, and sit again",920,0,0.0,0.0,40,0,0
+validation,false_positive,D13,"Sitting a moment, lying quickly, wait a moment, and sit again",574,0,0.0,0.0,25,0,0
+validation,false_positive,D14,"Being on one’s back change to lateral position, wait a moment, and change to one’s back",920,0,0.0,0.0,40,0,0
+validation,false_positive,D15,"Standing, slowly bending at knees, and getting up",920,0,0.0,0.0,40,0,0
+validation,false_positive,D16,"Standing, slowly bending without bending knees, and getting up",912,0,0.0,0.0,40,0,0
+validation,false_positive,D17,"Standing, get into a car, remain seated and get out of the car",1948,0,0.0,0.0,40,0,0
+validation,false_positive,D18,Stumble while walking,573,52,0.09075043630017451,0.025552825552825554,25,21,5
+validation,false_positive,D19,Gently jump without falling (trying to reach a high object),575,153,0.26608695652173914,0.07518427518427519,25,25,5
+validation,false_negative,F01,Fall forward while walking caused by a slip,25,1,0.04,0.038461538461538464,25,1,1
+validation,false_negative,F02,Fall backward while walking caused by a slip,25,0,0.0,0.0,25,0,0
+validation,false_negative,F03,Lateral fall while walking caused by a slip,25,1,0.04,0.038461538461538464,25,1,1
+validation,false_negative,F04,Fall forward while walking caused by a trip,25,0,0.0,0.0,25,0,0
+validation,false_negative,F05,Fall forward while jogging caused by a trip,25,0,0.0,0.0,25,0,0
+validation,false_negative,F06,Vertical fall while walking caused by fainting,25,1,0.04,0.038461538461538464,25,1,1
+validation,false_negative,F07,"Fall while walking, with use of hands in a table to dampen fall, caused by fainting",25,4,0.16,0.15384615384615385,25,4,3
+validation,false_negative,F08,Fall forward when trying to get up,25,1,0.04,0.038461538461538464,25,1,1
+validation,false_negative,F09,Lateral fall when trying to get up,25,2,0.08,0.07692307692307693,25,2,2
+validation,false_negative,F10,Fall forward when trying to sit down,25,1,0.04,0.038461538461538464,25,1,1
+validation,false_negative,F11,Fall backward when trying to sit down,25,2,0.08,0.07692307692307693,25,2,2
+validation,false_negative,F12,Lateral fall when trying to sit down,25,2,0.08,0.07692307692307693,25,2,2
+validation,false_negative,F13,"Fall forward while sitting, caused by fainting or falling asleep",25,10,0.4,0.38461538461538464,25,10,4
+validation,false_negative,F14,"Fall backward while sitting, caused by fainting or falling asleep",25,0,0.0,0.0,25,0,0
+validation,false_negative,F15,"Lateral fall while sitting, caused by fainting or falling asleep",25,1,0.04,0.038461538461538464,25,1,1
+test,false_positive,D01,Walking slowly,1744,0,0.0,0.0,8,0,0
+test,false_positive,D02,Walking quickly,1752,0,0.0,0.0,8,0,0
+test,false_positive,D03,Jogging slowly,1751,427,0.24386065105653912,0.18597560975609756,8,5,5
+test,false_positive,D04,Jogging quickly,1751,1476,0.8429468874928612,0.6428571428571429,8,8,8
+test,false_positive,D05,Walking upstairs and downstairs slowly,1956,0,0.0,0.0,40,0,0
+test,false_positive,D06,Walking upstairs and downstairs quickly,1174,193,0.1643952299829642,0.08405923344947736,24,24,5
+test,false_positive,D07,"Slowly sit in a half height chair, wait a moment, and up slowly",916,0,0.0,0.0,40,0,0
+test,false_positive,D08,"Quickly sit in a half height chair, wait a moment, and up quickly",920,4,0.004347826086956522,0.0017421602787456446,40,2,2
+test,false_positive,D09,"Slowly sit in a low height chair, wait a moment, and up slowly",920,0,0.0,0.0,40,0,0
+test,false_positive,D10,"Quickly sit in a low height chair, wait a moment, and up quickly",919,0,0.0,0.0,40,0,0
+test,false_positive,D11,"Sitting a moment, trying to get up, and collapse into a chair",900,8,0.008888888888888889,0.003484320557491289,40,4,1
+test,false_positive,D12,"Sitting a moment, lying slowly, wait a moment, and sit again",917,0,0.0,0.0,40,0,0
+test,false_positive,D13,"Sitting a moment, lying quickly, wait a moment, and sit again",574,0,0.0,0.0,25,0,0
+test,false_positive,D14,"Being on one’s back change to lateral position, wait a moment, and change to one’s back",917,0,0.0,0.0,40,0,0
+test,false_positive,D15,"Standing, slowly bending at knees, and getting up",900,0,0.0,0.0,40,0,0
+test,false_positive,D16,"Standing, slowly bending without bending knees, and getting up",894,0,0.0,0.0,40,0,0
+test,false_positive,D17,"Standing, get into a car, remain seated and get out of the car",1870,0,0.0,0.0,40,0,0
+test,false_positive,D18,Stumble while walking,574,37,0.06445993031358885,0.016114982578397212,25,16,5
+test,false_positive,D19,Gently jump without falling (trying to reach a high object),574,151,0.26306620209059234,0.06576655052264808,25,25,5
+test,false_negative,F01,Fall forward while walking caused by a slip,25,0,0.0,0.0,25,0,0
+test,false_negative,F02,Fall backward while walking caused by a slip,25,0,0.0,0.0,25,0,0
+test,false_negative,F03,Lateral fall while walking caused by a slip,25,2,0.08,0.05555555555555555,25,2,1
+test,false_negative,F04,Fall forward while walking caused by a trip,25,0,0.0,0.0,25,0,0
+test,false_negative,F05,Fall forward while jogging caused by a trip,25,0,0.0,0.0,25,0,0
+test,false_negative,F06,Vertical fall while walking caused by fainting,25,0,0.0,0.0,25,0,0
+test,false_negative,F07,"Fall while walking, with use of hands in a table to dampen fall, caused by fainting",25,2,0.08,0.05555555555555555,25,2,1
+test,false_negative,F08,Fall forward when trying to get up,25,4,0.16,0.1111111111111111,25,4,3
+test,false_negative,F09,Lateral fall when trying to get up,25,4,0.16,0.1111111111111111,25,4,3
+test,false_negative,F10,Fall forward when trying to sit down,25,4,0.16,0.1111111111111111,25,4,3
+test,false_negative,F11,Fall backward when trying to sit down,25,2,0.08,0.05555555555555555,25,2,2
+test,false_negative,F12,Lateral fall when trying to sit down,25,1,0.04,0.027777777777777776,25,1,1
+test,false_negative,F13,"Fall forward while sitting, caused by fainting or falling asleep",25,6,0.24,0.16666666666666666,25,6,3
+test,false_negative,F14,"Fall backward while sitting, caused by fainting or falling asleep",25,5,0.2,0.1388888888888889,25,5,4
+test,false_negative,F15,"Lateral fall while sitting, caused by fainting or falling asleep",25,6,0.24,0.16666666666666666,25,6,2

@@ -1,0 +1,37 @@
+[
+  {
+    "path": "SA15/D17_SE15_R01.txt",
+    "filename_subject": "SE15",
+    "folder_subject": "SA15",
+    "action": "exclude",
+    "sha256": "03a3f16edb3022674162ae7db5f728c0e24f0f8295f3e7b90bf7299bb8ba45e0"
+  },
+  {
+    "path": "SA15/D17_SE15_R02.txt",
+    "filename_subject": "SE15",
+    "folder_subject": "SA15",
+    "action": "exclude",
+    "sha256": "c1d121eff538041771c7da3fbe5105b4b1139e89d961b8efeb36aae8b4dab4af"
+  },
+  {
+    "path": "SA15/D17_SE15_R03.txt",
+    "filename_subject": "SE15",
+    "folder_subject": "SA15",
+    "action": "exclude",
+    "sha256": "1d319da51c24ac08d0f6912722863ccb8a94f21bf6e074a26ef14289baadb19c"
+  },
+  {
+    "path": "SA15/D17_SE15_R04.txt",
+    "filename_subject": "SE15",
+    "folder_subject": "SA15",
+    "action": "exclude",
+    "sha256": "14cd19bf0cfa49719c442a441bc995439fe1fefc0fb3603d5ef55478915b64d6"
+  },
+  {
+    "path": "SA15/D17_SE15_R05.txt",
+    "filename_subject": "SE15",
+    "folder_subject": "SA15",
+    "action": "exclude",
+    "sha256": "6cc3bc2ab0ed2ee9ecb7ecfeac18b10fd4acb354e595570e4d0e61703cf7a761"
+  }
+]

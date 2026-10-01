@@ -1,0 +1,63 @@
+{
+  "source_run": "C:\\Users\\user\\Documents\\UM\\EECS 473\\Final_project\\fall_detection\\processed\\baseline_v2",
+  "source_hashes": {
+    "windows.csv": "7f2c92cbe9d3ab3cc150e06c2dce74a6a61c336d7d42dfa70b0c1caf3f99413d",
+    "labels_groups_splits.npz": "c93cfdcd7ce3c6ce4230b9db24778e525d957b6fb10d15d44b2ce47d2b41d4a7",
+    "scores_filtered.npy": "c9cbb707847a65a19e66171c64c827ffed92221c0314b050cb813b2eb6ffdb08",
+    "baseline_metrics.json": "bf3cda0c5d772bc9d8a1e132464b7c60c8fdf3cf63671036546c8fc9fabffe2c",
+    "split_subjects.json": "1ba0d067a5755ebd7b706152b0e7839913d099a043aa89823bd0115fa5d1979c",
+    "config.json": "835035c3e739ee9b769daa28d70f732c33c99fc1f9bd00e2094cf1b0ac26aef3",
+    "dataset_readme": "547d9f2209f8c0c8d5756b0b371f5a46c17e1d2037338fa8c63f16229306c071"
+  },
+  "current_threshold_g": 2.209465980529785,
+  "splits_unchanged": true,
+  "operating_point_selection": "highest validation threshold meeting sensitivity target",
+  "summaries": {
+    "validation": {
+      "average_precision": 0.5832088672761573,
+      "prevalence": 0.017177408272639826,
+      "current": {
+        "n": 21831,
+        "confusion_matrix": [
+          [
+            19421,
+            2035
+          ],
+          [
+            26,
+            349
+          ]
+        ],
+        "sensitivity": 0.9306666666666666,
+        "specificity": 0.9051547352721849,
+        "balanced_accuracy": 0.9179107009694258,
+        "precision": 0.14639261744966442,
+        "f1": 0.2529902138455962,
+        "roc_auc": 0.9716728809346259
+      }
+    },
+    "test": {
+      "average_precision": 0.6198226397128328,
+      "prevalence": 0.01681765180733698,
+      "current": {
+        "n": 22298,
+        "confusion_matrix": [
+          [
+            19627,
+            2296
+          ],
+          [
+            36,
+            339
+          ]
+        ],
+        "sensitivity": 0.904,
+        "specificity": 0.8952698079642385,
+        "balanced_accuracy": 0.8996349039821192,
+        "precision": 0.1286527514231499,
+        "f1": 0.22524916943521595,
+        "roc_auc": 0.9684332740348798
+      }
+    }
+  }
+}

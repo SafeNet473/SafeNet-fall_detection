@@ -1,0 +1,24 @@
+|--- ga_C2 <= 0.94527560
+|   |--- ga_C2 <= 0.76161873
+|   |   |--- jerk_abs_peak <= 39.68746758
+|   |   |   |--- class: 0
+|   |   |--- jerk_abs_peak >  39.68746758
+|   |   |   |--- class: 0
+|   |--- ga_C2 >  0.76161873
+|   |   |--- jerk_rms <= 9.77102184
+|   |   |   |--- class: 1
+|   |   |--- jerk_rms >  9.77102184
+|   |   |   |--- class: 0
+|--- ga_C2 >  0.94527560
+|   |--- jerk_abs_mean <= 14.05581713
+|   |   |--- ga_C2 <= 1.07602566
+|   |   |   |--- class: 1
+|   |   |--- ga_C2 >  1.07602566
+|   |   |   |--- class: 1
+|   |--- jerk_abs_mean >  14.05581713
+|   |   |--- ga_parallel_peak <= 3.36972451
+|   |   |   |--- class: 0
+|   |   |--- ga_parallel_peak >  3.36972451
+|   |   |   |--- class: 1
+
+IMPORTANT: printed sklearn classes use its default class rule; deployed predictions must threshold the leaf positive score at 0.7705231308225133 instead. See model_parameters.json.
