@@ -1,0 +1,5 @@
+family,candidate,scaler_statistics,nodes,max_depth,trees,model_numeric_parameters,float32_numeric_parameter_bytes,estimated_flash_bytes,multiplications,additions,comparisons,nonlinear,extra_ram_bytes,deployment_form
+linear,linear_frozen,6,,,,4,16,20,3,3,1,none for binary logit comparison; score output adds sigmoid,4,Scaler fused into coefficients; separate logit threshold; quadratic costs include 6 monomial products
+quadratic,quadratic_C1,18,,,,10,40,44,15,9,1,none for binary logit comparison; score output adds sigmoid,40,Scaler fused into coefficients; separate logit threshold; quadratic costs include 6 monomial products
+forest,forest_t20_d3,0,270,3,20,270,1080,3328,1,19,61,tree branches; no exp/sqrt,8,"One float32 threshold OR leaf probability per node; 12-byte aligned node incl routing, 4-byte root index/tree, mean reciprocal and threshold"
+mlp,mlp_h8_a0.001,6,,,,41,164,168,32,32,9,"8 ReLU max(0,z); no sigmoid needed for binary logit comparison",36,Input scaler fused into first layer; one hidden layer; separate output-logit threshold

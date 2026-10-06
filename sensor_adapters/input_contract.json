@@ -1,0 +1,32 @@
+{
+  "frozen_algorithm": "MCU_v1",
+  "algorithm_sample_rate_hz": 200,
+  "input_units": "g",
+  "gravity_included": true,
+  "input": "chronological uniform 5 ms XYZ grid",
+  "selected_sensor": "ST LSM6DSOX",
+  "selected_effective_range_g": 16,
+  "selected_nominal_odr_hz": 208,
+  "actual_hardware_readback_verified": false,
+  "range_readback_policy": "explicit confirmed effective range; no register-bit assumptions",
+  "sensitivity_g_per_lsb": {
+    "2": 6.1e-05,
+    "4": 0.000122,
+    "8": 0.000244,
+    "16": 0.000488
+  },
+  "conversion_api": "lsm6dsox_counts_to_g; acquisition accepts confirmed effective \u00b116 g only",
+  "timing_api": "timing_adapter_push; configurable integer acquisition timestamp units",
+  "acquisition_api": "acquisition_push_lsm6dsox_sample",
+  "logical_period_seconds": 0.005,
+  "startup": "anchor first valid sample; emit only after second arrives",
+  "interpolation": "shared double weight; float output; exact endpoint copies",
+  "timestamp_policy": "acquisition/FIFO/sensor-clock time, not ISR arrival time; integer output grid",
+  "max_gap_policy": "explicit config; replay uses 1.5 nominal input periods; no interpolation beyond limit",
+  "discontinuity_policy": "discard active event; restart stream; hardware changes block until reconfigure/read-back",
+  "authoritative_precision": "unchanged mixed-precision detector",
+  "float_status": "deployment candidate; numerical differences remain",
+  "native208_status": "historical isolated experiment, not selected deployment",
+  "final_hardware_threshold": null,
+  "resampler_status": "implemented and host-validated; real sensor/target qualification pending"
+}

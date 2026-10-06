@@ -1,0 +1,14 @@
+{
+  "all_source_hashes_unchanged": true,
+  "mcu_v1_unchanged": true,
+  "no_test_data_used": true,
+  "baseline_scores_identical": true,
+  "physical_features_exact": [
+    "ga_C2",
+    "jerk_abs_mean",
+    "ga_parallel_peak"
+  ],
+  "fit_count": 14,
+  "selected_model_count": 4,
+  "max_mlp_hidden_units": 8
+}

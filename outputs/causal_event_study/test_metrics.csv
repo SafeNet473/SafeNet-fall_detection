@@ -1,0 +1,4 @@
+split,key,design,fall_trials,adl_trials,adl_hours,raw_trigger_recall,candidate_recall,any_candidate_trial_recall,candidates_per_adl_hour,sensitivity,false_alarms_per_adl_hour,event_precision,tp_events,fp_events,latency_median_s,latency_worst_s
+test,g00,pre100_post100,375,571,3.130275,0.976,0.976,1.0,1155.8089944174233,0.616,1.2778430010142878,0.9705882352941176,231,7,0.48,1.32
+test,g00,pre50_post150,375,571,3.130275,0.976,0.976,1.0,1153.2533084153947,0.6666666666666666,1.9167645015214316,0.9578544061302682,250,11,0.67,1.57
+test,g00,pre100_post200,375,571,3.130275,0.976,0.976,1.0,1145.9057111595625,0.776,2.2362252517750036,0.9478827361563518,291,16,0.915,1.82

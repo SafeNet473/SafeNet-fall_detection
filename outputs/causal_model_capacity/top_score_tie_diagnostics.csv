@@ -1,0 +1,5 @@
+candidate,highest_nonempty_threshold,positive_decisions,ADL_FA_per_hour,detected_falls
+linear_frozen,0.9999999997308,1.0,0.0,1.0
+quadratic_C1,0.9999999999949938,1.0,0.0,1.0
+forest_t20_d3,0.9877342104193858,355.0,8.474737405372224,322.0
+mlp_h8_a0.001,0.9999999963621986,1.0,0.0,1.0

@@ -1,0 +1,3 @@
+feature_set,primary_achieved,secondary_achieved,max_sensitivity_FA_le_1,max_sensitivity_FA_le_5,extra_detected_falls_needed_at_FA1,extra_detected_falls_needed_at_FA5,minimum_FA_to_exceed98,FA_gap_to_primary,FA_gap_to_secondary,candidate_recall,unavoidable_trigger_misses,additional_classifier_misses_at_FA1,additional_classifier_misses_at_FA5
+frozen3,False,False,0.8933333333333333,0.9333333333333333,33,18,143.0926815753233,142.0926815753233,138.0926815753233,0.9866666666666667,5,35,20
+expanded5,False,False,0.856,0.9306666666666666,47,19,59.32316183760556,58.32316183760556,54.32316183760556,0.9866666666666667,5,49,21

@@ -1,0 +1,65 @@
+{
+  "feature_sets": {
+    "frozen3": [
+      "ga_C2",
+      "jerk_abs_mean",
+      "ga_parallel_peak"
+    ],
+    "expanded5": [
+      "ga_C2",
+      "jerk_abs_mean",
+      "ga_parallel_peak",
+      "late_mag_variance",
+      "late_minus_pre_jerk"
+    ],
+    "expanded7_if_gate_passes": [
+      "ga_C2",
+      "jerk_abs_mean",
+      "ga_parallel_peak",
+      "late_mag_variance",
+      "late_minus_pre_jerk",
+      "perp_active_fraction",
+      "late_parallel_std"
+    ]
+  },
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "scaler": "train-only StandardScaler",
+  "estimator": "L2 balanced liblinear logistic; max_iter=5000,tol=1e-8,seed=473; no validation refit",
+  "hyperparameter_rank": "Primary success >98% at <=1 FA/h, secondary >98% at <=5; then lexicographic detected falls at budgets 1,5,10,20; then smaller FA/h at >98%,>=95%,>=97%; then smaller C",
+  "operating_points": "All unique validation scores plus no-alarm boundary; >= score comparison. Full frontier plus BA diagnostic and target-specific thresholds; no global deployment threshold changed.",
+  "material_rule": ">=1 percentage point sensitivity gain at any budget 1/5/10/20 OR >=20% AND >=1 FA/h reduction at >=95%,>=97%,>98%; require no >=1-point loss at budgets 1 or 5. Rule is a practical screen, not statistical significance.",
+  "stop": "If 5-feature expansion fails material gate vs frozen3, do not fit 7. At most 7 features; no additional search regardless of outcome.",
+  "baseline": "Reuse already train-fitted frozen C=10 scaler/weights; never refit/replace it. Expanded models also report fixed C=10 control to separate feature gain from C selection.",
+  "targets": {
+    "primary": "sensitivity >0.98 and ADL FA/h <=1",
+    "secondary": "sensitivity >0.98 and ADL FA/h <=5"
+  },
+  "feature_timing": "pre indices0:100, late indices200:300; all complete at existing trigger+200 decision",
+  "added_definitions": {
+    "late_mag_variance": "population variance of ||a|| on late100, g^2",
+    "late_minus_pre_jerk": "200*mean(abs(diff(m_late100)))-200*mean(abs(diff(m_pre100))), each99 differences, g/s",
+    "perp_active_fraction": "mean(perpendicular_magnitude > 0.5g) over300; fixed untuned threshold, dimensionless",
+    "late_parallel_std": "population std of signed dot(a,u) over late100, g"
+  },
+  "no_test_access": true,
+  "input_sha256": {
+    "outputs\\sisfall\\causal_feature_expansion.py": "24d9bad615dc8d3f19c022abbd2c2746269db2158049ef383b24b60cd29fb27e",
+    "outputs\\sisfall\\train_causal_models.py": "139d3cef06b43d89c34d8598be1917299672b60432d9149fa9c6d144b121a770",
+    "outputs\\sisfall\\causal_events.py": "748c4e4ced6a21305d0a2585d5b31faa124ce918e52deb81d99a4f8912e01cae",
+    "outputs\\causal_event_study\\selection.json": "4d582446e7e52c220bcd0c3684cc25878c4644544fd2e326e114e0a53a375338",
+    "processed\\baseline_v2\\split_subjects.json": "1ba0d067a5755ebd7b706152b0e7839913d099a043aa89823bd0115fa5d1979c",
+    "processed\\baseline_v2\\trials.csv": "b5ccf1560ff08e11586d1b94fa022c42ac075b9b21e443ae5c48300520465aef",
+    "outputs\\causal_trained_models_v1\\logistic.joblib": "6a7c9c00596356028492e7b24b488a1ef1b9e0d1ff5a3f58908a04b43cc81623",
+    "outputs\\causal_trained_models_v1\\model_parameters.json": "31c8db961f9dfc555de30f78527abbcfd412911d22b9a33b034577c9ffdd9af8",
+    "outputs\\causal_trained_models_v1\\event_predictions.csv": "817b2076a56dbede632d2be01fec1e400e5816940e38e4a8079529853d863979",
+    "outputs\\causal_event_study\\train_events.csv": "1fec70e738f9bb071441f89b98fb98fdc24e7d8ff7b140814bf531303cd003b3",
+    "outputs\\causal_event_study\\train_trial_results.csv": "4679f3539172ff00464c3a03af0d92f7ca5ff45a7ad66e53c88f3e68f3545a1b",
+    "outputs\\causal_event_study\\validation_events.csv": "c3e3f8f9a9cac15adc439022f079f2b47702802d1259be45288174361263df6e",
+    "outputs\\causal_event_study\\validation_trial_results.csv": "58cbf89a18175a6b3225a50fd9ab85a8edff1c1a557be16d3f9bb90434f8dc69"
+  }
+}

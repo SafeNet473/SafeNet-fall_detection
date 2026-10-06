@@ -1,0 +1,40 @@
+{
+  "key": "g00",
+  "trigger": [
+    1.1,
+    5.0
+  ],
+  "design": "pre100_post200",
+  "validation": {
+    "split": "validation",
+    "key": "g00",
+    "design": "pre100_post200",
+    "fall_trials": 375,
+    "adl_trials": 572,
+    "adl_hours": 3.0679416666666666,
+    "raw_trigger_recall": 0.9866666666666667,
+    "candidate_recall": 0.9866666666666667,
+    "any_candidate_trial_recall": 1.0,
+    "candidates_per_adl_hour": 1072.0542817795863,
+    "sensitivity": 0.848,
+    "false_alarms_per_adl_hour": 12.386154669390173,
+    "event_precision": 0.8784530386740331,
+    "tp_events": 318,
+    "fp_events": 44,
+    "latency_median_s": 0.8825000000000001,
+    "latency_worst_s": 1.88
+  },
+  "selection_time_unix": 1791084314.643875,
+  "inputs": {
+    "outputs\\simplified_decision_tree\\simplified_tree.json": "b5ca1e63be6b7923ffa7a61b79dc8fca9b113a04b739d37a88b3aa4053231a9a",
+    "outputs\\simplified_decision_tree\\predict_simplified.py": "aa67b27ecd3399098901aa441f674f2fbf234fd7dbb21ae97c5883505d326b28",
+    "processed\\baseline_v2\\split_subjects.json": "1ba0d067a5755ebd7b706152b0e7839913d099a043aa89823bd0115fa5d1979c",
+    "processed\\baseline_v2\\trials.csv": "b5ccf1560ff08e11586d1b94fa022c42ac075b9b21e443ae5c48300520465aef",
+    "processed\\baseline_v2\\windows.csv": "7f2c92cbe9d3ab3cc150e06c2dce74a6a61c336d7d42dfa70b0c1caf3f99413d",
+    "processed\\baseline_v2\\config.json": "835035c3e739ee9b769daa28d70f732c33c99fc1f9bd00e2094cf1b0ac26aef3",
+    "outputs\\robust_classifiers\\features_all.npy": "31dbdead653c3fb40c48ec3fe4ddc32c044157d70f0149f5693afeea7bda8917",
+    "outputs\\sisfall\\causal_events.py": "748c4e4ced6a21305d0a2585d5b31faa124ce918e52deb81d99a4f8912e01cae",
+    "outputs\\sisfall\\orientation_features.py": "19009daf11356d68f27905f4577c47f58e1dd85fcd86ddf4bc45f2af5ca1d21b"
+  },
+  "target_99_percent_met": false
+}

@@ -1,0 +1,23 @@
+{
+  "checked": [
+    {
+      "feature_set": "frozen3",
+      "validation_candidates": 4387,
+      "selected_points_checked": 8,
+      "saved_score_mismatches": 0
+    },
+    {
+      "feature_set": "expanded5",
+      "validation_candidates": 4387,
+      "selected_points_checked": 8,
+      "saved_score_mismatches": 0
+    }
+  ],
+  "accounting_passed": true,
+  "budget_optimality_passed": true,
+  "strict_target_check_passed": true,
+  "baseline_inputs_unchanged": true,
+  "train_only_scaler_verified": true,
+  "stopping_rule_enforced": true,
+  "no_test_data_used": true
+}

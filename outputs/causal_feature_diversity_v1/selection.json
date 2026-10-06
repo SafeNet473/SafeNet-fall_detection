@@ -1,0 +1,166 @@
+{
+  "models": {
+    "frozen_baseline3": {
+      "C": 10.0,
+      "features": [
+        "ga_C2",
+        "jerk_abs_mean",
+        "ga_parallel_peak"
+      ]
+    },
+    "baseline3": {
+      "C": 10.0,
+      "features": [
+        "ga_C2",
+        "jerk_abs_mean",
+        "ga_parallel_peak"
+      ]
+    },
+    "plus_gaC8": {
+      "C": 1.0,
+      "features": [
+        "ga_C2",
+        "jerk_abs_mean",
+        "ga_parallel_peak",
+        "ga_C8"
+      ]
+    },
+    "plus_settling": {
+      "C": 10.0,
+      "features": [
+        "ga_C2",
+        "jerk_abs_mean",
+        "ga_parallel_peak",
+        "post_mag_variance"
+      ]
+    },
+    "plus_energy_ratio": {
+      "C": 1.0,
+      "features": [
+        "ga_C2",
+        "jerk_abs_mean",
+        "ga_parallel_peak",
+        "pre_post_energy_ratio"
+      ]
+    },
+    "plus_orientation_change": {
+      "C": 0.1,
+      "features": [
+        "ga_C2",
+        "jerk_abs_mean",
+        "ga_parallel_peak",
+        "gravity_direction_change"
+      ]
+    },
+    "all7": {
+      "C": 0.1,
+      "features": [
+        "ga_C2",
+        "jerk_abs_mean",
+        "ga_parallel_peak",
+        "ga_C8",
+        "post_mag_variance",
+        "pre_post_energy_ratio",
+        "gravity_direction_change"
+      ]
+    }
+  },
+  "materiality": [
+    {
+      "feature_set": "baseline3",
+      "material": false,
+      "sensitivity_gains": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0,
+        "20": 0.0
+      },
+      "FA_reduction_fractions": {
+        "sens_ge95": 0.0,
+        "sens_ge97": 0.0,
+        "sens_gt98": 0.0
+      },
+      "both_low_budgets_regress_ge1pp": false
+    },
+    {
+      "feature_set": "plus_gaC8",
+      "material": true,
+      "sensitivity_gains": {
+        "1": 0.016000000000000014,
+        "5": 0.005333333333333301,
+        "10": 0.010666666666666713,
+        "20": 0.0
+      },
+      "FA_reduction_fractions": {
+        "sens_ge95": 0.20512820512820507,
+        "sens_ge97": -0.013157894736842035,
+        "sens_gt98": 0.2710706150341685
+      },
+      "both_low_budgets_regress_ge1pp": false
+    },
+    {
+      "feature_set": "plus_settling",
+      "material": false,
+      "sensitivity_gains": {
+        "1": -0.002666666666666595,
+        "5": 0.002666666666666706,
+        "10": 0.005333333333333301,
+        "20": 0.002666666666666706
+      },
+      "FA_reduction_fractions": {
+        "sens_ge95": 0.1282051282051282,
+        "sens_ge97": 0.19736842105263164,
+        "sens_gt98": 0.18678815489749423
+      },
+      "both_low_budgets_regress_ge1pp": false
+    },
+    {
+      "feature_set": "plus_energy_ratio",
+      "material": true,
+      "sensitivity_gains": {
+        "1": 0.013333333333333308,
+        "5": 0.005333333333333301,
+        "10": 0.005333333333333301,
+        "20": 0.005333333333333412
+      },
+      "FA_reduction_fractions": {
+        "sens_ge95": 0.1282051282051282,
+        "sens_ge97": 0.32894736842105265,
+        "sens_gt98": 0.08428246013667429
+      },
+      "both_low_budgets_regress_ge1pp": false
+    },
+    {
+      "feature_set": "plus_orientation_change",
+      "material": true,
+      "sensitivity_gains": {
+        "1": 0.03733333333333333,
+        "5": 0.013333333333333308,
+        "10": 0.013333333333333308,
+        "20": -0.002666666666666595
+      },
+      "FA_reduction_fractions": {
+        "sens_ge95": 0.5128205128205128,
+        "sens_ge97": -0.6578947368421053,
+        "sens_gt98": -0.031890660592255315
+      },
+      "both_low_budgets_regress_ge1pp": false
+    },
+    {
+      "feature_set": "all7",
+      "material": true,
+      "sensitivity_gains": {
+        "1": 0.04266666666666674,
+        "5": 0.016000000000000014,
+        "10": 0.01866666666666672,
+        "20": -0.002666666666666595
+      },
+      "FA_reduction_fractions": {
+        "sens_ge95": 0.5641025641025641,
+        "sens_ge97": -0.5263157894736843,
+        "sens_gt98": 0.47835990888382685
+      },
+      "both_low_budgets_regress_ge1pp": false
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "feature_order_exact": true,
+  "model_parameters_exact": true,
+  "hyperparameters_exact": true,
+  "validation_candidates": 4387,
+  "validation_score_mismatches_saved_csv": 0,
+  "validation_score_mismatches_authoritative_joblib": 0,
+  "maximum_absolute_score_error": 0.0,
+  "float64_score_bytes_identical": true,
+  "reference_prediction_mismatches_saved_csv": 0,
+  "operating_point_checks": {
+    "balanced_reference": {
+      "prediction_mismatches": 0,
+      "uint8_bytes_identical": true,
+      "positive_decisions": 376
+    },
+    "sensitivity_oriented_candidate": {
+      "prediction_mismatches": 0,
+      "uint8_bytes_identical": true,
+      "positive_decisions": 410
+    }
+  },
+  "serialized_manifest_round_trip_exact": true,
+  "source_artifacts_modified": [],
+  "all_source_hashes_unchanged": true,
+  "no_training_or_retuning": true,
+  "no_test_evaluation": true,
+  "verification_method": "Assign saved fitted attributes to sklearn containers; use identical transform/predict_proba operations on saved validation features; no fit method called.",
+  "fused_float32_parity_verified": false,
+  "final_hardware_threshold_frozen": false
+}

@@ -1,0 +1,84 @@
+{
+  "kind": "binary decision tree; does not preserve probability scores",
+  "original_positive_score_threshold": 0.7705231308225133,
+  "input_features": [
+    "mag_mean",
+    "mag_std",
+    "mag_rms",
+    "mag_peak",
+    "mag_ptp",
+    "jerk_abs_mean",
+    "jerk_std",
+    "jerk_rms",
+    "jerk_abs_peak",
+    "pre_variance",
+    "post_variance",
+    "gyro_mean",
+    "gyro_std",
+    "gyro_rms",
+    "gyro_peak",
+    "ga_C2",
+    "ga_C8",
+    "ga_C13",
+    "ga_parallel_peak",
+    "ga_parallel_std",
+    "ga_parallel_ptp"
+  ],
+  "required_features": [
+    "ga_C2",
+    "ga_parallel_peak",
+    "jerk_abs_mean"
+  ],
+  "input_dtype": "float32",
+  "comparison_semantics": "NumPy float32 scalar <= Python float, matching current exported_tree_scores; not a float32 firmware validation",
+  "depth": 3,
+  "node_count": 7,
+  "leaf_count": 4,
+  "max_comparisons": 3,
+  "tree": {
+    "original_node": 0,
+    "feature_index": 15,
+    "feature": "ga_C2",
+    "threshold": 0.945275604724884,
+    "left": {
+      "prediction": 0,
+      "original_leaves": [
+        3,
+        4,
+        6,
+        7
+      ]
+    },
+    "right": {
+      "original_node": 8,
+      "feature_index": 5,
+      "feature": "jerk_abs_mean",
+      "threshold": 14.055817127227783,
+      "left": {
+        "prediction": 1,
+        "original_leaves": [
+          10,
+          11
+        ]
+      },
+      "right": {
+        "original_node": 12,
+        "feature_index": 18,
+        "feature": "ga_parallel_peak",
+        "threshold": 3.3697245121002197,
+        "left": {
+          "prediction": 0,
+          "original_leaves": [
+            13
+          ]
+        },
+        "right": {
+          "prediction": 1,
+          "original_leaves": [
+            14
+          ]
+        }
+      }
+    }
+  }
+}

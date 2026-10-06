@@ -1,0 +1,158 @@
+{
+  "inputs": {
+    "outputs\\simplified_decision_tree\\simplified_tree.json": "b5ca1e63be6b7923ffa7a61b79dc8fca9b113a04b739d37a88b3aa4053231a9a",
+    "outputs\\simplified_decision_tree\\predict_simplified.py": "aa67b27ecd3399098901aa441f674f2fbf234fd7dbb21ae97c5883505d326b28",
+    "processed\\baseline_v2\\split_subjects.json": "1ba0d067a5755ebd7b706152b0e7839913d099a043aa89823bd0115fa5d1979c",
+    "processed\\baseline_v2\\trials.csv": "b5ccf1560ff08e11586d1b94fa022c42ac075b9b21e443ae5c48300520465aef",
+    "processed\\baseline_v2\\windows.csv": "7f2c92cbe9d3ab3cc150e06c2dce74a6a61c336d7d42dfa70b0c1caf3f99413d",
+    "processed\\baseline_v2\\config.json": "835035c3e739ee9b769daa28d70f732c33c99fc1f9bd00e2094cf1b0ac26aef3",
+    "outputs\\robust_classifiers\\features_all.npy": "31dbdead653c3fb40c48ec3fe4ddc32c044157d70f0149f5693afeea7bda8917",
+    "outputs\\sisfall\\causal_events.py": "748c4e4ced6a21305d0a2585d5b31faa124ce918e52deb81d99a4f8912e01cae",
+    "outputs\\sisfall\\orientation_features.py": "19009daf11356d68f27905f4577c47f58e1dd85fcd86ddf4bc45f2af5ca1d21b"
+  },
+  "designs": {
+    "pre100_post100": [
+      100,
+      100
+    ],
+    "pre50_post150": [
+      50,
+      150
+    ],
+    "pre100_post200": [
+      100,
+      200
+    ]
+  },
+  "grid": [
+    [
+      1.1,
+      5.0
+    ],
+    [
+      1.1,
+      10.0
+    ],
+    [
+      1.1,
+      20.0
+    ],
+    [
+      1.1,
+      40.0
+    ],
+    [
+      1.1,
+      null
+    ],
+    [
+      1.3,
+      5.0
+    ],
+    [
+      1.3,
+      10.0
+    ],
+    [
+      1.3,
+      20.0
+    ],
+    [
+      1.3,
+      40.0
+    ],
+    [
+      1.3,
+      null
+    ],
+    [
+      1.5,
+      5.0
+    ],
+    [
+      1.5,
+      10.0
+    ],
+    [
+      1.5,
+      20.0
+    ],
+    [
+      1.5,
+      40.0
+    ],
+    [
+      1.5,
+      null
+    ],
+    [
+      1.8,
+      5.0
+    ],
+    [
+      1.8,
+      10.0
+    ],
+    [
+      1.8,
+      20.0
+    ],
+    [
+      1.8,
+      40.0
+    ],
+    [
+      1.8,
+      null
+    ],
+    [
+      2.2,
+      5.0
+    ],
+    [
+      2.2,
+      10.0
+    ],
+    [
+      2.2,
+      20.0
+    ],
+    [
+      2.2,
+      40.0
+    ],
+    [
+      2.2,
+      null
+    ]
+  ],
+  "sos": [
+    [
+      3.123897691708262e-05,
+      6.247795383416523e-05,
+      3.123897691708262e-05,
+      1.0,
+      -1.7259333950369407,
+      0.7474473719077911
+    ],
+    [
+      1.0,
+      2.0,
+      1.0,
+      1.0,
+      -1.863800492075235,
+      0.8870329996526946
+    ]
+  ],
+  "fs": 200,
+  "refractory_samples": 300,
+  "matching_tolerance_samples": 200,
+  "selection": "Trigger: >=99% completed matched candidate recall in ALL designs, then lowest mean ADL candidate rate; if infeasible maximize minimum recall first. Window: highest validation final sensitivity, then lowest ADL false alarm rate, then shortest post delay.",
+  "ground_truth": "One assumed event per fall trial; raw magnitude argmax is an evaluation-only proxy. Match trigger within +/-1 s; one-to-one earliest positive decision; all other alarms count as false/duplicates.",
+  "boundary": "No padding/shifting; require full prehistory and full explicit post delay.",
+  "precision": "TP matched fall events/(TP + all unmatched or duplicate alarms, including fall-trial alarms)",
+  "latency": "Earliest matched positive decision minus raw-peak proxy, seconds; signed, detected events only.",
+  "filter_initialization": "sosfilt_zi * first raw sample; reset only per trial; gravity first raw sample",
+  "longer_window": "300 samples; same max features; jerk mean over 299 differences, no tree changes",
+  "numeric": "float64 filter/gravity; filtered sample cast float32 as existing interface; float64 feature calculation; exported float32 tree inputs"
+}

@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "candidate": "linear_frozen",
+      "validation_rows": 4387,
+      "saved_model_score_mismatches": 0,
+      "manual_export_max_abs_score_error": 0.0,
+      "manual_export_selected_threshold_prediction_mismatches": 0
+    },
+    {
+      "candidate": "quadratic_C1",
+      "validation_rows": 4387,
+      "saved_model_score_mismatches": 0,
+      "manual_export_max_abs_score_error": 0.0,
+      "manual_export_selected_threshold_prediction_mismatches": 0
+    },
+    {
+      "candidate": "forest_t20_d3",
+      "validation_rows": 4387,
+      "saved_model_score_mismatches": 0,
+      "manual_export_max_abs_score_error": 0.0,
+      "manual_export_selected_threshold_prediction_mismatches": 0
+    },
+    {
+      "candidate": "mlp_h8_a0.001",
+      "validation_rows": 4387,
+      "saved_model_score_mismatches": 0,
+      "manual_export_max_abs_score_error": 0.0,
+      "manual_export_selected_threshold_prediction_mismatches": 0
+    }
+  ],
+  "quadratic_order_verified": true,
+  "event_accounting_verified": true,
+  "exact_budget_and_target_optimality_verified": true,
+  "materiality_AND_guard_verified": true,
+  "train_only_scalers_verified": true,
+  "all_source_and_MCU_v1_hashes_unchanged": true,
+  "no_test_data_used": true
+}

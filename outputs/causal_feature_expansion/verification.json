@@ -1,0 +1,22 @@
+{
+  "frozen_inputs_unchanged": true,
+  "baseline_validation_scores_identical": true,
+  "no_test_data_used": true,
+  "model_families": [
+    "logistic_regression"
+  ],
+  "max_features_tested": 5,
+  "five_feature_gate": {
+    "material": false,
+    "budget_sensitivity_gains": {
+      "FA_le_1": -0.03733333333333333,
+      "FA_le_5": -0.002666666666666706,
+      "FA_le_10": 0.005333333333333301,
+      "FA_le_20": 0.008000000000000007
+    },
+    "targets_with_at_least_20pct_and_1FAh_reduction": [
+      "sens_ge97",
+      "sens_gt98"
+    ]
+  }
+}

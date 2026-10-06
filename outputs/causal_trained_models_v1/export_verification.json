@@ -1,0 +1,33 @@
+{
+  "synthetic_event_accounting_passed": true,
+  "independent_real_event_accounting_passed": true,
+  "training_only_scaler_verified": true,
+  "inputs_unchanged": true,
+  "test_data_opened": false,
+  "checks": [
+    {
+      "split": "train",
+      "model": "tree",
+      "candidates": 12253,
+      "export_prediction_mismatches": 0
+    },
+    {
+      "split": "train",
+      "model": "logistic",
+      "candidates": 12253,
+      "export_prediction_mismatches": 0
+    },
+    {
+      "split": "validation",
+      "model": "tree",
+      "candidates": 4387,
+      "export_prediction_mismatches": 0
+    },
+    {
+      "split": "validation",
+      "model": "logistic",
+      "candidates": 4387,
+      "export_prediction_mismatches": 0
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+signal 0 jitter=0: 2501 outputs, 100 exact coincidences, interpolation error 0, analytic error 0
+signal 0 jitter=1: 2501 outputs, 166 exact coincidences, interpolation error 0, analytic error 0
+signal 1 jitter=0: 2501 outputs, 100 exact coincidences, interpolation error 0, analytic error 1.4495849605111744e-06
+signal 1 jitter=1: 2501 outputs, 166 exact coincidences, interpolation error 0, analytic error 1.4495849605111744e-06
+signal 2 jitter=0: 2501 outputs, 100 exact coincidences, interpolation error 0, analytic error 0.0027718323973604519
+signal 2 jitter=1: 2501 outputs, 166 exact coincidences, interpolation error 0, analytic error 0.0030247349051418793
+duplicate/reversal/gap/nonfinite/overflow/reset checks passed
+one-hour nanosecond timing: 748801 inputs, 720001 outputs, zero grid drift
+acquisition startup/event discard/configuration notifications passed
+sizeof: timing=56 config=32 detector=2856 acquisition=2976

@@ -1,0 +1,8 @@
+{
+  "all_sources_and_MCU_v1_unchanged": true,
+  "baseline_scores_exact": true,
+  "refitted_baseline_C10_exact": true,
+  "fit_count": 24,
+  "feature_sets_tested": 6,
+  "no_test_data_used": true
+}

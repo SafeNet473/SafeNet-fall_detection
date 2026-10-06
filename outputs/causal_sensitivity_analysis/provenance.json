@@ -1,0 +1,30 @@
+{
+  "input_sha256": {
+    "outputs\\causal_trained_models_v1\\model_parameters.json": "31c8db961f9dfc555de30f78527abbcfd412911d22b9a33b034577c9ffdd9af8",
+    "outputs\\causal_trained_models_v1\\event_predictions.csv": "817b2076a56dbede632d2be01fec1e400e5816940e38e4a8079529853d863979",
+    "outputs\\causal_trained_models_v1\\metrics.csv": "e73060b43f5e8358dc581ea722cb4422d44389bf448bc61202aae16775f4a5c8",
+    "outputs\\causal_event_study\\selection.json": "4d582446e7e52c220bcd0c3684cc25878c4644544fd2e326e114e0a53a375338",
+    "outputs\\causal_event_study\\validation_trial_results.csv": "58cbf89a18175a6b3225a50fd9ab85a8edff1c1a557be16d3f9bb90434f8dc69",
+    "processed\\baseline_v2\\split_subjects.json": "1ba0d067a5755ebd7b706152b0e7839913d099a043aa89823bd0115fa5d1979c",
+    "outputs\\sisfall\\causal_sensitivity_sweep.py": "76a0ea3d9057d5dfb08e9a40c45387ea247cd2a2ed14dab4264759e8ebb6a699"
+  },
+  "feature_order": [
+    "ga_C2",
+    "jerk_abs_mean",
+    "ga_parallel_peak"
+  ],
+  "no_test_access": true,
+  "no_training": true,
+  "threshold_rule": "score >= threshold; unique validation scores plus nextafter(max_score,+infinity)",
+  "reference_threshold": 0.8850929456953477,
+  "tie_policy": "Exact sensitivity ties: fewer ADL alarms/hour, fewer total decisions, highest threshold; no nearly-equal tolerance introduced",
+  "lowest_threshold": "Literal lowest numerical boundary in the requested sweep; not the highest/most selective threshold meeting a target",
+  "validation_fall_trials": 375,
+  "validation_adl_trials": 572,
+  "adl_hours": 3.0679416666666666,
+  "validation_candidates": 4387,
+  "thresholds": 4388,
+  "candidate_recall_ceiling": 0.9866666666666667,
+  "maximum_sensitivity_threshold": 1.4766279401201908e-09,
+  "max_saved_score_equation_error": 3.3306690738754696e-16
+}

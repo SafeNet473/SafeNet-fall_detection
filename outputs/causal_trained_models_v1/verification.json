@@ -1,0 +1,13 @@
+{
+  "inputs_unchanged": true,
+  "offline_predictions_identical": true,
+  "test_data_opened": false,
+  "training_candidates": 12253,
+  "training_positive_candidates": 1081,
+  "validation_candidates": 4387,
+  "validation_positive_candidates": 386,
+  "python": "3.12.10",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1"
+}

@@ -1,0 +1,6 @@
+# Keep reports, aggregate measurements and synthetic inputs reviewable.
+# Detailed golden CSVs and host binaries remain available locally.
+/compiler_cache/
+*.exe
+/*_precision/*/*.csv
+/experimental_float/*/*.csv

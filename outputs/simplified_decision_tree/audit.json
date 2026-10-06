@@ -1,0 +1,222 @@
+{
+  "source_sha256": {
+    "C:\\Users\\user\\Documents\\UM\\EECS 473\\Final_project\\fall_detection\\outputs\\robust_classifiers\\model_parameters.json": "bb3d0954d80bb635bfcaf76bb141b932b8a124d7c38a175b77bb754d91546c28",
+    "C:\\Users\\user\\Documents\\UM\\EECS 473\\Final_project\\fall_detection\\outputs\\robust_classifiers\\decision_tree.joblib": "2d3034330702374a64376270c4a4a4804bdbc20e9256130033a53d0c9b7e047c",
+    "C:\\Users\\user\\Documents\\UM\\EECS 473\\Final_project\\fall_detection\\outputs\\robust_classifiers\\features_all.npy": "31dbdead653c3fb40c48ec3fe4ddc32c044157d70f0149f5693afeea7bda8917",
+    "C:\\Users\\user\\Documents\\UM\\EECS 473\\Final_project\\fall_detection\\outputs\\robust_classifiers\\original_predictions.npz": "f164b9eb0328e0b732ccba5b6c250fbdf524234b03a842a3bb22931c1b157444",
+    "C:\\Users\\user\\Documents\\UM\\EECS 473\\Final_project\\fall_detection\\processed\\baseline_v2\\labels_groups_splits.npz": "c93cfdcd7ce3c6ce4230b9db24778e525d957b6fb10d15d44b2ce47d2b41d4a7"
+  },
+  "source_files_unchanged": true,
+  "locked_threshold": 0.7705231308225133,
+  "leaves": [
+    {
+      "leaf_id": 3,
+      "positive_score": 0.0029779867376308294,
+      "deployed_decision": 0,
+      "training_samples": 55649,
+      "training_positive_samples": 3,
+      "training_negative_samples": 55646,
+      "unweighted_positive_fraction": 5.3909324516163814e-05,
+      "weighted_training_samples": 28409.800004984394
+    },
+    {
+      "leaf_id": 4,
+      "positive_score": 0.38905640654525,
+      "deployed_decision": 0,
+      "training_samples": 88,
+      "training_positive_samples": 1,
+      "training_negative_samples": 87,
+      "unweighted_positive_fraction": 0.011363636363636364,
+      "weighted_training_samples": 72.48649656815915
+    },
+    {
+      "leaf_id": 6,
+      "positive_score": 0.7168010490882202,
+      "deployed_decision": 0,
+      "training_samples": 206,
+      "training_positive_samples": 9,
+      "training_negative_samples": 197,
+      "unweighted_positive_fraction": 0.043689320388349516,
+      "weighted_training_samples": 354.0899154983316
+    },
+    {
+      "leaf_id": 7,
+      "positive_score": 0.0,
+      "deployed_decision": 0,
+      "training_samples": 1095,
+      "training_positive_samples": 0,
+      "training_negative_samples": 1095,
+      "unweighted_positive_fraction": 0.0,
+      "weighted_training_samples": 557.382194895127
+    },
+    {
+      "leaf_id": 10,
+      "positive_score": 0.7705231308225133,
+      "deployed_decision": 1,
+      "training_samples": 210,
+      "training_positive_samples": 12,
+      "training_negative_samples": 198,
+      "unweighted_positive_fraction": 0.05714285714285714,
+      "weighted_training_samples": 439.20294796744247
+    },
+    {
+      "leaf_id": 11,
+      "positive_score": 0.9977003328440758,
+      "deployed_decision": 1,
+      "training_samples": 1148,
+      "training_positive_samples": 1018,
+      "training_negative_samples": 130,
+      "unweighted_positive_fraction": 0.8867595818815331,
+      "weighted_training_samples": 28775.133152282247
+    },
+    {
+      "leaf_id": 13,
+      "positive_score": 0.0,
+      "deployed_decision": 0,
+      "training_samples": 664,
+      "training_positive_samples": 0,
+      "training_negative_samples": 664,
+      "unweighted_positive_fraction": 0.0,
+      "weighted_training_samples": 337.9924907857153
+    },
+    {
+      "leaf_id": 14,
+      "positive_score": 0.8602542448217624,
+      "deployed_decision": 1,
+      "training_samples": 50,
+      "training_positive_samples": 5,
+      "training_negative_samples": 45,
+      "unweighted_positive_fraction": 0.1,
+      "weighted_training_samples": 163.91279698774215
+    }
+  ],
+  "pruning": [
+    {
+      "original_node": 0,
+      "descendant_leaves": [
+        3,
+        4,
+        6,
+        7,
+        10,
+        11,
+        13,
+        14
+      ],
+      "decisions": [
+        0,
+        1
+      ],
+      "prunable": false
+    },
+    {
+      "original_node": 1,
+      "descendant_leaves": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "decisions": [
+        0
+      ],
+      "prunable": true
+    },
+    {
+      "original_node": 2,
+      "descendant_leaves": [
+        3,
+        4
+      ],
+      "decisions": [
+        0
+      ],
+      "prunable": true
+    },
+    {
+      "original_node": 5,
+      "descendant_leaves": [
+        6,
+        7
+      ],
+      "decisions": [
+        0
+      ],
+      "prunable": true
+    },
+    {
+      "original_node": 8,
+      "descendant_leaves": [
+        10,
+        11,
+        13,
+        14
+      ],
+      "decisions": [
+        0,
+        1
+      ],
+      "prunable": false
+    },
+    {
+      "original_node": 9,
+      "descendant_leaves": [
+        10,
+        11
+      ],
+      "decisions": [
+        1
+      ],
+      "prunable": true
+    },
+    {
+      "original_node": 12,
+      "descendant_leaves": [
+        13,
+        14
+      ],
+      "decisions": [
+        0,
+        1
+      ],
+      "prunable": false
+    }
+  ],
+  "structure": {
+    "depth": 3,
+    "nodes": 7,
+    "leaves": 4,
+    "features": [
+      "ga_C2",
+      "ga_parallel_peak",
+      "jerk_abs_mean"
+    ],
+    "max_comparisons": 3
+  },
+  "verification": [
+    {
+      "split": "train",
+      "rows": 59110,
+      "mismatches": 0,
+      "uint8_bytes_identical": true
+    },
+    {
+      "split": "validation",
+      "rows": 21831,
+      "mismatches": 0,
+      "uint8_bytes_identical": true
+    },
+    {
+      "split": "test",
+      "rows": 22298,
+      "mismatches": 0,
+      "uint8_bytes_identical": true
+    }
+  ],
+  "boundary_cases_verified": 27,
+  "exported_predictor_verified": true,
+  "minimum_axis_aligned_internal_nodes": 3,
+  "minimum_depth": 3,
+  "numpy_version": "2.5.3",
+  "sklearn_version": "1.9.1"
+}

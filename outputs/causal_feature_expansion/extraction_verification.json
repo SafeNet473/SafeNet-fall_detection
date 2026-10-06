@@ -1,0 +1,8 @@
+{
+  "candidates_checked": 16640,
+  "base_feature_max_abs_difference": 0.0,
+  "candidate_times_identical": true,
+  "raw_hashes_verified": true,
+  "causal_ring_availability_assertions_passed": true,
+  "no_test_replay": true
+}

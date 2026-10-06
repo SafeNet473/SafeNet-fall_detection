@@ -1,0 +1,10 @@
+{
+  "inputs_unchanged": true,
+  "reference_metrics_reproduced": true,
+  "monotonicity_verified": true,
+  "no_alarm_boundary_verified": true,
+  "all_alarm_boundary_verified": true,
+  "candidate_ceiling_verified": true,
+  "all_maximum_sensitivity_misses_accounted_for": true,
+  "no_matched_complete_rejections_at_minimum_boundary": true
+}

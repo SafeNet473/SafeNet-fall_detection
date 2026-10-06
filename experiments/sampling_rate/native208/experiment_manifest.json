@@ -1,0 +1,49 @@
+{
+  "fs": 208,
+  "pre": 104,
+  "post": 208,
+  "refractory": 312,
+  "samples": 312,
+  "differences": 311,
+  "sos": [
+    [
+      2.6898826993863763e-05,
+      5.3797653987727525e-05,
+      2.6898826993863763e-05,
+      1.0,
+      -1.735918875512653,
+      0.7559091777017953
+    ],
+    [
+      1.0,
+      2.0,
+      1.0,
+      1.0,
+      -1.8695799039676104,
+      0.8911094050141518
+    ]
+  ],
+  "zi": [
+    [
+      0.005355476434641477,
+      -0.004041688031111391
+    ],
+    [
+      0.9946176247383633,
+      -0.8857270297525153
+    ]
+  ],
+  "alpha": 0.014990320381589761,
+  "source_sha256": {
+    "embedded\\classifier.c": "f4eca5f6b237c688161b296b619bf939478201749b3b8b0fd76718f2736c65e6",
+    "embedded\\classifier.h": "6c4be612ea09574e14ad475ef1824b8e93120ba9ddd61c517ce16c4927587d2b",
+    "embedded\\fall_detector.c": "638f6c26021912f9a0a8528fc4ed352a4e246402cf298b3b7021ecf37c5875e4",
+    "embedded\\fall_detector.h": "b76b3e6dd55a4375cacd08c6b271f6a47f99dd7f1d7ba3c98aff30eda3511c4e",
+    "embedded\\features.c": "ee517cd105d8ea8a00081f57efef5a0f718bf85184a97b2be50307579f7460e9",
+    "embedded\\features.h": "f0066398c0ecc265769671ab45e4f91589c54f407f73e3056aa8ca2264a3ffec",
+    "embedded\\filters.c": "5b4c52331d4aac78332549c7122f1c521ed6a9febfc47d112ea8e8ce9d97e261",
+    "embedded\\filters.h": "ea2e831634a0cec83becccc85f54c786ac213809241248a278d8865160a93b1b",
+    "embedded\\model_params.h": "7e737b9b7c88657c29434c5e20cbfa689623513f1447cc2f23b754d1d191e58a"
+  },
+  "model": "same frozen weights/scaler/logits; no fit"
+}

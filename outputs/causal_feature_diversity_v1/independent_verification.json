@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "operating_points_independently_checked": 56,
+  "exact_saved_score_parity": true,
+  "exact_exported_parameter_score_parity": true,
+  "training_only_scaler_means_verified": true,
+  "boundary_coverage_and_budget_optimality_verified": true,
+  "source_hashes_unchanged": true,
+  "no_test_data_used": true,
+  "no_refitting": true,
+  "python": "3.12.10",
+  "numpy": "2.5.0",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1"
+}

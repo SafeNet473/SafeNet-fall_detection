@@ -1,0 +1,3 @@
+# Local downloaded compiler; retain on disk, exclude binary distribution.
+*
+!.gitignore

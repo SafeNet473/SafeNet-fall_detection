@@ -1,0 +1,3733 @@
+{
+  "precision": "default mixed precision",
+  "compile_command": [
+    "C:\\Users\\user\\Documents\\UM\\EECS 473\\Final_project\\fall_detection\\outputs\\host_toolchain\\ziglang\\zig.exe",
+    "cc",
+    "-std=c99",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic",
+    "-ffp-contract=off",
+    "-Iembedded",
+    "tests/host_validation.c",
+    "embedded/filters.c",
+    "embedded/features.c",
+    "embedded/classifier.c",
+    "embedded/fall_detector.c",
+    "-o",
+    "C:\\Users\\user\\Documents\\UM\\EECS 473\\Final_project\\fall_detection\\outputs\\host_pc_validation\\host_validation.exe"
+  ],
+  "protected_sha256": {
+    "embedded\\classifier.c": "f4eca5f6b237c688161b296b619bf939478201749b3b8b0fd76718f2736c65e6",
+    "embedded\\classifier.h": "6c4be612ea09574e14ad475ef1824b8e93120ba9ddd61c517ce16c4927587d2b",
+    "embedded\\fall_detector.c": "638f6c26021912f9a0a8528fc4ed352a4e246402cf298b3b7021ecf37c5875e4",
+    "embedded\\fall_detector.h": "b76b3e6dd55a4375cacd08c6b271f6a47f99dd7f1d7ba3c98aff30eda3511c4e",
+    "embedded\\features.c": "ee517cd105d8ea8a00081f57efef5a0f718bf85184a97b2be50307579f7460e9",
+    "embedded\\features.h": "f0066398c0ecc265769671ab45e4f91589c54f407f73e3056aa8ca2264a3ffec",
+    "embedded\\filters.c": "5b4c52331d4aac78332549c7122f1c521ed6a9febfc47d112ea8e8ce9d97e261",
+    "embedded\\filters.h": "ea2e831634a0cec83becccc85f54c786ac213809241248a278d8865160a93b1b",
+    "embedded\\model_params.h": "7e737b9b7c88657c29434c5e20cbfa689623513f1447cc2f23b754d1d191e58a",
+    "outputs\\mcu_v1_frozen\\model_manifest.json": "c3048c8ea418b144093ef4a30b9ce00ea5d0418b32e1508a890d18eda27dab9b",
+    "outputs\\causal_trained_models_v1\\logistic.joblib": "6a7c9c00596356028492e7b24b488a1ef1b9e0d1ff5a3f58908a04b43cc81623",
+    "outputs\\sisfall\\causal_events.py": "748c4e4ced6a21305d0a2585d5b31faa124ce918e52deb81d99a4f8912e01cae",
+    "outputs\\sisfall\\orientation_features.py": "19009daf11356d68f27905f4577c47f58e1dd85fcd86ddf4bc45f2af5ca1d21b",
+    "outputs\\sisfall\\pipeline.py": "e1800bddf554bd7249df54dc6a4241dd0a508298c6ce8a2f050e90a6ee3f1132",
+    "processed\\baseline_v2\\trials.csv": "b5ccf1560ff08e11586d1b94fa022c42ac075b9b21e443ae5c48300520465aef",
+    "processed\\baseline_v2\\config.json": "835035c3e739ee9b769daa28d70f732c33c99fc1f9bd00e2094cf1b0ac26aef3"
+  },
+  "classifier": {
+    "balanced_reference": {
+      "comparison": {
+        "passed": true,
+        "columns": {
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 3.552713678800501e-15,
+            "mean_abs": 7.536059318667729e-16,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "vectors": 132,
+      "class_matches": 132,
+      "probability_threshold": 0.8850929456953477,
+      "logit_threshold": 2.041569084741143
+    },
+    "sensitivity_oriented_candidate": {
+      "comparison": {
+        "passed": true,
+        "columns": {
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 3.552713678800501e-15,
+            "mean_abs": 7.536059318667729e-16,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "vectors": 132,
+      "class_matches": 132,
+      "probability_threshold": 0.7742031648776018,
+      "logit_threshold": 1.2321986907376832
+    }
+  },
+  "replays": [
+    {
+      "name": "F01_SA05_R02",
+      "path": "SA05/F01_SA05_R02.txt",
+      "raw_sha256": "131a19ce179a3243193b25c0f839a286e244d9f7e1a5a6bf94a5f27c2a559237",
+      "point": "balanced_reference",
+      "samples": 3000,
+      "events": 5,
+      "class_matches": 5,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 1.1102230246251565e-15,
+            "mean_abs": 5.773159728050814e-16,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 8.881784197001252e-16,
+            "mean_abs": 5.329070518200751e-16,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "F01_SA05_R02",
+      "path": "SA05/F01_SA05_R02.txt",
+      "raw_sha256": "131a19ce179a3243193b25c0f839a286e244d9f7e1a5a6bf94a5f27c2a559237",
+      "point": "sensitivity_oriented_candidate",
+      "samples": 3000,
+      "events": 5,
+      "class_matches": 5,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 1.1102230246251565e-15,
+            "mean_abs": 5.773159728050814e-16,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 8.881784197001252e-16,
+            "mean_abs": 5.329070518200751e-16,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "D01_SA05_R01",
+      "path": "SA05/D01_SA05_R01.txt",
+      "raw_sha256": "15ff752da076524ca60ce81fdb6629ccea350cb80151d8494705fa88635b61f7",
+      "point": "balanced_reference",
+      "samples": 19999,
+      "events": 49,
+      "class_matches": 49,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 1.3322676295501878e-15,
+            "mean_abs": 5.256566157408904e-16,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 2.6645352591003757e-15,
+            "mean_abs": 7.975479687103165e-16,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "D01_SA05_R01",
+      "path": "SA05/D01_SA05_R01.txt",
+      "raw_sha256": "15ff752da076524ca60ce81fdb6629ccea350cb80151d8494705fa88635b61f7",
+      "point": "sensitivity_oriented_candidate",
+      "samples": 19999,
+      "events": 49,
+      "class_matches": 49,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 1.3322676295501878e-15,
+            "mean_abs": 5.256566157408904e-16,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 2.6645352591003757e-15,
+            "mean_abs": 7.975479687103165e-16,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "D03_SA05_R01",
+      "path": "SA05/D03_SA05_R01.txt",
+      "raw_sha256": "456c83050c042e49438345500eabf49f25b84a5d29a04eb65da30365e6f89167",
+      "point": "balanced_reference",
+      "samples": 20000,
+      "events": 62,
+      "class_matches": 62,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 1.2434497875801753e-14,
+            "mean_abs": 4.154382930855425e-15,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 1.2434497875801753e-14,
+            "mean_abs": 4.383590264971586e-15,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "D03_SA05_R01",
+      "path": "SA05/D03_SA05_R01.txt",
+      "raw_sha256": "456c83050c042e49438345500eabf49f25b84a5d29a04eb65da30365e6f89167",
+      "point": "sensitivity_oriented_candidate",
+      "samples": 20000,
+      "events": 62,
+      "class_matches": 62,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 1.2434497875801753e-14,
+            "mean_abs": 4.154382930855425e-15,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 1.2434497875801753e-14,
+            "mean_abs": 4.383590264971586e-15,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "D05_SA05_R01",
+      "path": "SA05/D05_SA05_R01.txt",
+      "raw_sha256": "fa4f91514a12a824e5e13befcccb1c6bd8acfede9fe3130790217db4e1128409",
+      "point": "balanced_reference",
+      "samples": 5000,
+      "events": 10,
+      "class_matches": 10,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 2.220446049250313e-15,
+            "mean_abs": 4.884981308350689e-16,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 1.7763568394002505e-15,
+            "mean_abs": 5.329070518200751e-16,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "D05_SA05_R01",
+      "path": "SA05/D05_SA05_R01.txt",
+      "raw_sha256": "fa4f91514a12a824e5e13befcccb1c6bd8acfede9fe3130790217db4e1128409",
+      "point": "sensitivity_oriented_candidate",
+      "samples": 5000,
+      "events": 10,
+      "class_matches": 10,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 2.220446049250313e-15,
+            "mean_abs": 4.884981308350689e-16,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 1.7763568394002505e-15,
+            "mean_abs": 5.329070518200751e-16,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "F13_SA05_R01",
+      "path": "SA05/F13_SA05_R01.txt",
+      "raw_sha256": "74de734927281253f3b8340582ebd872cd2bd5ce9b281c69199e154d652d6abd",
+      "point": "balanced_reference",
+      "samples": 3000,
+      "events": 1,
+      "class_matches": 1,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 1.7763568394002505e-15,
+            "mean_abs": 1.7763568394002505e-15,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 2.220446049250313e-15,
+            "mean_abs": 2.220446049250313e-15,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "F13_SA05_R01",
+      "path": "SA05/F13_SA05_R01.txt",
+      "raw_sha256": "74de734927281253f3b8340582ebd872cd2bd5ce9b281c69199e154d652d6abd",
+      "point": "sensitivity_oriented_candidate",
+      "samples": 3000,
+      "events": 1,
+      "class_matches": 1,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 1.7763568394002505e-15,
+            "mean_abs": 1.7763568394002505e-15,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 2.220446049250313e-15,
+            "mean_abs": 2.220446049250313e-15,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "F13_SA05_R02",
+      "path": "SA05/F13_SA05_R02.txt",
+      "raw_sha256": "5994b8752a93679485086a321e067c2def8c23d28d9485d6abf0d17330d13d5f",
+      "point": "balanced_reference",
+      "samples": 3000,
+      "events": 1,
+      "class_matches": 1,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 4.440892098500626e-16,
+            "mean_abs": 4.440892098500626e-16,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "F13_SA05_R02",
+      "path": "SA05/F13_SA05_R02.txt",
+      "raw_sha256": "5994b8752a93679485086a321e067c2def8c23d28d9485d6abf0d17330d13d5f",
+      "point": "sensitivity_oriented_candidate",
+      "samples": 3000,
+      "events": 1,
+      "class_matches": 1,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 4.440892098500626e-16,
+            "mean_abs": 4.440892098500626e-16,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "F05_SA05_R01",
+      "path": "SA05/F05_SA05_R01.txt",
+      "raw_sha256": "bfd60882c63540d54860288b7e86fbcec9034d3a3dfc71e045016f10ec448420",
+      "point": "balanced_reference",
+      "samples": 3000,
+      "events": 4,
+      "class_matches": 4,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 1.7763568394002505e-15,
+            "mean_abs": 1.2212453270876722e-15,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 2.6645352591003757e-15,
+            "mean_abs": 2.220446049250313e-15,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    },
+    {
+      "name": "F05_SA05_R01",
+      "path": "SA05/F05_SA05_R01.txt",
+      "raw_sha256": "bfd60882c63540d54860288b7e86fbcec9034d3a3dfc71e045016f10ec448420",
+      "point": "sensitivity_oriented_candidate",
+      "samples": 3000,
+      "events": 4,
+      "class_matches": 4,
+      "streams": {
+        "passed": true,
+        "columns": {
+          "fx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "fz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ax": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ay": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "az": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "gz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ux": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uy": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "uz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bx": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "by": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "bz": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 5e-08,
+            "passed": true
+          },
+          "high": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "edge": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "event_comparison": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "start": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "end": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "decision": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "ga_C2": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "jerk_abs_mean": {
+            "max_abs": 1.7763568394002505e-15,
+            "mean_abs": 1.2212453270876722e-15,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "ga_parallel_peak": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "z": {
+            "max_abs": 2.6645352591003757e-15,
+            "mean_abs": 2.220446049250313e-15,
+            "absolute_tolerance": 5e-09,
+            "passed": true
+          },
+          "label": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "threshold": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "count": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          }
+        }
+      },
+      "history": {
+        "passed": true,
+        "columns": {
+          "trigger": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "index": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 0,
+            "passed": true
+          },
+          "m": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "h": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          },
+          "abs_p": {
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "absolute_tolerance": 2e-10,
+            "passed": true
+          }
+        }
+      },
+      "first_discrepancy": null,
+      "passed": true
+    }
+  ],
+  "indexing_assertions": {
+    "trigger": 1681,
+    "start": 1581,
+    "end": 1881,
+    "decision": 1881,
+    "window_samples": 300,
+    "decision_sample_excluded": true,
+    "no_decision_without_decision_sample": true,
+    "ring_wraps_before_trigger": 16,
+    "chronological_prehistory_passed": true
+  },
+  "protected_inputs_unchanged": true,
+  "summary": {
+    "classifier_only_passed": true,
+    "raw_replay_passed": true,
+    "recordings": 7,
+    "samples": 56999,
+    "events_per_operating_point": 132,
+    "exact_class_matches": 264,
+    "total_decisions": 264,
+    "maximum_feature_error": 1.2434497875801753e-14,
+    "maximum_replay_score_error": 1.2434497875801753e-14,
+    "maximum_classifier_only_score_error": 3.552713678800501e-15,
+    "trigger_indices_exact": true,
+    "event_indices_exact": true
+  },
+  "passed": true
+}

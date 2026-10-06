@@ -1,0 +1,96 @@
+{
+  "feature_order": [
+    "ga_C2",
+    "jerk_abs_mean",
+    "ga_parallel_peak",
+    "ga_C8",
+    "post_mag_variance",
+    "pre_post_energy_ratio",
+    "gravity_direction_change"
+  ],
+  "sets": {
+    "baseline3": [
+      "ga_C2",
+      "jerk_abs_mean",
+      "ga_parallel_peak"
+    ],
+    "plus_gaC8": [
+      "ga_C2",
+      "jerk_abs_mean",
+      "ga_parallel_peak",
+      "ga_C8"
+    ],
+    "plus_settling": [
+      "ga_C2",
+      "jerk_abs_mean",
+      "ga_parallel_peak",
+      "post_mag_variance"
+    ],
+    "plus_energy_ratio": [
+      "ga_C2",
+      "jerk_abs_mean",
+      "ga_parallel_peak",
+      "pre_post_energy_ratio"
+    ],
+    "plus_orientation_change": [
+      "ga_C2",
+      "jerk_abs_mean",
+      "ga_parallel_peak",
+      "gravity_direction_change"
+    ],
+    "all7": [
+      "ga_C2",
+      "jerk_abs_mean",
+      "ga_parallel_peak",
+      "ga_C8",
+      "post_mag_variance",
+      "pre_post_energy_ratio",
+      "gravity_direction_change"
+    ]
+  },
+  "definitions": {
+    "ga_C8": "sqrt(sum_axis sample variance of b, ddof=1, full300); retain existing ga_C8 convention",
+    "post_mag_variance": "population variance of magnitude over indices200:300, ddof=0",
+    "pre_post_energy_ratio": "mean(h[200:300]^2)/(mean(h[0:100]^2)+1e-6)",
+    "gravity_direction_change": "acos(clamp(dot(normalize(mean(G[0:100])),normalize(mean(G[200:300]))),-1,1)); radians; norm<1e-8 returns0"
+  },
+  "energy_epsilon_g2": 1e-06,
+  "gravity_epsilon_g": 1e-08,
+  "variance_convention": "existing ga_C8 sample ddof1 retained; new settling population ddof0",
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "estimator": "balanced L2 liblinear logistic; seed473, tol1e-8,max_iter5000",
+  "scaler": "train-only StandardScaler per feature set, no validation refit",
+  "selection": "Primary target >98% at<=1 FA/h, secondary at<=5; then lexicographic detected falls at1/5/10/20; then smaller FA/h at>98%,>=95%,>=97%; then smaller C",
+  "material_rule": ">=1pp sensitivity gain at any budget1/5/10/20 OR >=20% FA reduction at>=95%,>=97%,>98%; disqualify only if>=1pp regression at BOTH <=1 AND<=5",
+  "baseline": "Keep frozen C10 model untouched as comparison reference. Fit baseline3 C-grid in this experiment as a separate control; C10 reproduction must match saved model exactly.",
+  "bounds": "Exactly six sets x four C values =24 fits. No feature or C additions afterward, regardless of results.",
+  "no_test_data": true,
+  "inputs_sha256": {
+    "outputs\\mcu_v1_frozen\\MODEL_FREEZE.md": "edca0b91d642069b9083ba2a367a8f16a05c054d0e512ee3b3d7f48982d02bf7",
+    "outputs\\mcu_v1_frozen\\model_manifest.json": "c3048c8ea418b144093ef4a30b9ce00ea5d0418b32e1508a890d18eda27dab9b",
+    "outputs\\mcu_v1_frozen\\provenance.json": "e68c5952789c87c10d1785154c4b4127318e4acde6587b2805ef1ccd3c620c77",
+    "outputs\\mcu_v1_frozen\\README.md": "9b9e8ef51c15215c5830b128784aaacaf15eb1004a7a242e3ed658c3514db9f3",
+    "outputs\\mcu_v1_frozen\\verification.json": "4f1215b77d5bbbc72c3b9757e41bb62fe32c74666c7a97e4e6e4c2ca72d8c9c8",
+    "outputs\\sisfall\\causal_feature_diversity.py": "7267e06d145d4d0fa8f7e2274dd5e11986a317f5b249e124bb0be43b5337b59a",
+    "outputs\\sisfall\\causal_feature_expansion.py": "24d9bad615dc8d3f19c022abbd2c2746269db2158049ef383b24b60cd29fb27e",
+    "outputs\\sisfall\\train_causal_models.py": "139d3cef06b43d89c34d8598be1917299672b60432d9149fa9c6d144b121a770",
+    "outputs\\sisfall\\causal_events.py": "748c4e4ced6a21305d0a2585d5b31faa124ce918e52deb81d99a4f8912e01cae",
+    "outputs\\sisfall\\causal_model_capacity.py": "f761937b9cf768eac0843ae4c4264034d72a9e98469c70483d5f0590d29de0d9",
+    "outputs\\causal_trained_models_v1\\logistic.joblib": "6a7c9c00596356028492e7b24b488a1ef1b9e0d1ff5a3f58908a04b43cc81623",
+    "outputs\\causal_trained_models_v1\\event_predictions.csv": "817b2076a56dbede632d2be01fec1e400e5816940e38e4a8079529853d863979",
+    "outputs\\causal_event_study\\selection.json": "4d582446e7e52c220bcd0c3684cc25878c4644544fd2e326e114e0a53a375338",
+    "processed\\baseline_v2\\split_subjects.json": "1ba0d067a5755ebd7b706152b0e7839913d099a043aa89823bd0115fa5d1979c",
+    "processed\\baseline_v2\\trials.csv": "b5ccf1560ff08e11586d1b94fa022c42ac075b9b21e443ae5c48300520465aef",
+    "processed\\baseline_v2\\config.json": "835035c3e739ee9b769daa28d70f732c33c99fc1f9bd00e2094cf1b0ac26aef3",
+    "outputs\\sisfall\\orientation_features.py": "19009daf11356d68f27905f4577c47f58e1dd85fcd86ddf4bc45f2af5ca1d21b",
+    "outputs\\causal_event_study\\train_events.csv": "1fec70e738f9bb071441f89b98fb98fdc24e7d8ff7b140814bf531303cd003b3",
+    "outputs\\causal_event_study\\train_trial_results.csv": "4679f3539172ff00464c3a03af0d92f7ca5ff45a7ad66e53c88f3e68f3545a1b",
+    "outputs\\causal_event_study\\validation_events.csv": "c3e3f8f9a9cac15adc439022f079f2b47702802d1259be45288174361263df6e",
+    "outputs\\causal_event_study\\validation_trial_results.csv": "58cbf89a18175a6b3225a50fd9ab85a8edff1c1a557be16d3f9bb90434f8dc69"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "candidate_count": 16640,
+  "existing_features_exact": true,
+  "trigger_times_exact": true,
+  "raw_hashes_verified": true,
+  "invalid_gravity_mean_count": 0,
+  "invalid_gravity_windows": [],
+  "ring_availability_assertions_passed": true,
+  "no_test_replay": true
+}

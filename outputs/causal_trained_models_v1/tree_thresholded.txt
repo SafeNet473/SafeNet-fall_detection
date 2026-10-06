@@ -1,0 +1,11 @@
+Positive-score threshold: 0.971060451555281
+if ga_C2 <= 0.7625822126865387:
+  if ga_C2 <= 0.5887503325939178:
+    0 (positive score=0.04037174613013629)
+  else:
+    0 (positive score=0.28589792573496287)
+else:
+  if jerk_abs_mean <= 14.344163417816162:
+    1 (positive score=0.971060451555281)
+  else:
+    0 (positive score=0.0)

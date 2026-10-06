@@ -1,0 +1,6 @@
+# Preserve report and measured summary; keep bulk diagnostics locally.
+/compiler_cache/
+*.exe
+*.csv
+/*/*.csv
+/*/*/*.csv

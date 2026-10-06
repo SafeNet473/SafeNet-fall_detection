@@ -1,0 +1,6 @@
+path,subject,fall_type,reason,proxy_peak_sample,raw_triggers,complete_candidates,best_matched_score,ga_C2,jerk_abs_mean,ga_parallel_peak
+SA05/F01_SA05_R01.txt,SA05,F01,no_matched_trigger,1822,5,5,,,,
+SA05/F04_SA05_R05.txt,SA05,F04,no_matched_trigger,1823,5,5,,,,
+SA05/F06_SA05_R01.txt,SA05,F06,no_matched_trigger,1682,5,5,,,,
+SA05/F11_SA05_R04.txt,SA05,F11,no_matched_trigger,1400,2,2,,,,
+SA19/F08_SA19_R02.txt,SA19,F08,no_matched_trigger,1234,1,1,,,,

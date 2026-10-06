@@ -1,0 +1,3 @@
+model,BA_delta,sensitivity_delta,substantial_BA_degradation,sensitivity_drop_5pp
+tree,0.01869463869463872,0.09333333333333338,False,False
+logistic,0.04965967365967372,0.08533333333333337,False,False

@@ -1,0 +1,10 @@
+if ga_C2 <= 0.945275604724884:
+    return 0  # ADL
+else:
+    if jerk_abs_mean <= 14.055817127227783:
+        return 1  # FALL
+    else:
+        if ga_parallel_peak <= 3.3697245121002197:
+            return 0  # ADL
+        else:
+            return 1  # FALL

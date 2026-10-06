@@ -1,0 +1,17 @@
+feature_set,operating_point,sensitivity_delta_pp,false_alarms_per_hour_delta,detected_falls_delta
+frozen3,FA_le_1,0.0,0.0,0.0
+frozen3,FA_le_5,0.0,0.0,0.0
+frozen3,FA_le_10,0.0,0.0,0.0
+frozen3,FA_le_20,0.0,0.0,0.0
+frozen3,sens_ge95,0.0,0.0,0.0
+frozen3,sens_ge97,0.0,0.0,0.0
+frozen3,sens_gt98,0.0,0.0,0.0
+frozen3,BA_reference,0.0,0.0,0.0
+expanded5,FA_le_1,-3.733333333333333,0.0,-14.0
+expanded5,FA_le_5,-0.2666666666666706,0.0,-1.0
+expanded5,FA_le_10,0.5333333333333301,-0.3259514386681621,2.0
+expanded5,FA_le_20,0.8000000000000007,2.2816600706771375,3.0
+expanded5,sens_ge95,0.0,1.9557086320089745,0.0
+expanded5,sens_ge97,0.0,-6.5190287733632495,0.0
+expanded5,sens_gt98,0.0,-83.76951973771773,0.0
+expanded5,BA_reference,1.0666666666666602,1.6297571933408124,4.0

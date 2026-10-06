@@ -1,0 +1,1 @@
+This initial run stopped during JSON export because a NumPy integer was not JSON serializable. Do not use these partial artifacts. The completed run is in `../causal_trained_models_v1/`; its experiment plan, models, report, and verification records are authoritative. No test data was used in either run.

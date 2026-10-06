@@ -1,0 +1,15 @@
+candidate,family,converged,warnings,n_iter
+quadratic_C0.01,quadratic,True,,10
+quadratic_C0.1,quadratic,True,,11
+quadratic_C1,quadratic,True,,11
+quadratic_C10,quadratic,True,,13
+forest_t5_d2,forest,True,,
+forest_t5_d3,forest,True,,
+forest_t10_d2,forest,True,,
+forest_t10_d3,forest,True,,
+forest_t20_d2,forest,True,,
+forest_t20_d3,forest,True,,
+mlp_h4_a0.001,mlp,True,,147
+mlp_h4_a0.1,mlp,True,,107
+mlp_h8_a0.001,mlp,True,,402
+mlp_h8_a0.1,mlp,True,,427

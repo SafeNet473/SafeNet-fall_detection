@@ -1,0 +1,42 @@
+{
+  "baseline_id": "MCU_v1",
+  "source_paths_relative_to": "workspace root",
+  "source_sha256": {
+    "outputs\\causal_trained_models_v1\\model_parameters.json": "31c8db961f9dfc555de30f78527abbcfd412911d22b9a33b034577c9ffdd9af8",
+    "outputs\\causal_trained_models_v1\\logistic.joblib": "6a7c9c00596356028492e7b24b488a1ef1b9e0d1ff5a3f58908a04b43cc81623",
+    "outputs\\causal_trained_models_v1\\event_predictions.csv": "817b2076a56dbede632d2be01fec1e400e5816940e38e4a8079529853d863979",
+    "outputs\\causal_trained_models_v1\\metrics.csv": "e73060b43f5e8358dc581ea722cb4422d44389bf448bc61202aae16775f4a5c8",
+    "outputs\\causal_trained_models_v1\\experiment_plan.json": "51a7f6e11d7d7f36fdb88ece96600d040525a8c563613106a54214a39642444d",
+    "outputs\\causal_trained_models_v1\\selection.json": "7cb8eeac6a388febc8a1b1288be428b64379b8f85774d5bef33a889dc0f82173",
+    "outputs\\causal_trained_models_v1\\verification.json": "c3e6f64acb4d619f23fa5cbd89b7008593f9bf445051b5a17df1f1a8fefb2d8d",
+    "outputs\\causal_trained_models_v1\\export_verification.json": "844f27063213dbde85be3b2b3f55bedb5b093b2bc4ed08b96a11205de1549d91",
+    "outputs\\causal_event_study\\experiment_plan.json": "13a749f6ad7999ae39367291a8dda3020adf89ccb9966f5350f0c3ed5f54896f",
+    "outputs\\causal_event_study\\selection.json": "4d582446e7e52c220bcd0c3684cc25878c4644544fd2e326e114e0a53a375338",
+    "outputs\\causal_event_study\\regression_tests.json": "244e281be73b9d377a3dc6e13d93e003ebfd470e774b78882acb80352a05761b",
+    "outputs\\causal_sensitivity_analysis\\operating_points.csv": "f0260f193eac0caa98f8a0383d7c1d7b7d6231b2b82b76a8b58b8ea4f5e51ce2",
+    "outputs\\causal_sensitivity_analysis\\provenance.json": "3a5b13b1827697dd708dfcd4dc47a55fa9533947f61817942705c2ef0f9daebf",
+    "outputs\\causal_sensitivity_analysis\\verification.json": "df0c59923935e505092066c57f1428ef11bc6840ece259cc65b8bbfee0f80e0e",
+    "outputs\\causal_sensitivity_analysis\\maximum_sensitivity_misses.csv": "8ba7f6b9c34bf3227e825e512af2c76e6b031515c6344541c49e49f6b5569bf2",
+    "outputs\\orientation_study\\provenance.json": "e103480b10d658e2d12b453e35704bf4cc1b546b3a2150d69d5939e5c8cd91cb",
+    "processed\\baseline_v2\\config.json": "835035c3e739ee9b769daa28d70f732c33c99fc1f9bd00e2094cf1b0ac26aef3",
+    "processed\\baseline_v2\\split_subjects.json": "1ba0d067a5755ebd7b706152b0e7839913d099a043aa89823bd0115fa5d1979c",
+    "outputs\\sisfall\\pipeline.py": "e1800bddf554bd7249df54dc6a4241dd0a508298c6ce8a2f050e90a6ee3f1132",
+    "outputs\\sisfall\\causal_events.py": "748c4e4ced6a21305d0a2585d5b31faa124ce918e52deb81d99a4f8912e01cae",
+    "outputs\\sisfall\\orientation_features.py": "19009daf11356d68f27905f4577c47f58e1dd85fcd86ddf4bc45f2af5ca1d21b",
+    "outputs\\sisfall\\train_causal_models.py": "139d3cef06b43d89c34d8598be1917299672b60432d9149fa9c6d144b121a770",
+    "outputs\\sisfall\\causal_sensitivity_sweep.py": "76a0ea3d9057d5dfb08e9a40c45387ea247cd2a2ed14dab4264759e8ebb6a699",
+    "outputs\\sisfall\\freeze_mcu_v1.py": "705b884f063de18591cfcdf2f60166048a8b33971bc61caa1bb44a8674fe2f30"
+  },
+  "code_git_head": "b4411084d20e8ef87416af539741bdad3840ed83",
+  "code_version_note": "Git HEAD is contextual; individual file hashes are authoritative for uncommitted files.",
+  "creation_method": "source parameter copy plus algebraic coefficient/logit derivation; no fit/tune/replay",
+  "creator_code_path": "outputs\\sisfall\\freeze_mcu_v1.py",
+  "libraries": {
+    "python": "3.12.10",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1"
+  },
+  "model_manifest_sha256": "c3048c8ea418b144093ef4a30b9ce00ea5d0418b32e1508a890d18eda27dab9b",
+  "test_data_evaluated": false
+}

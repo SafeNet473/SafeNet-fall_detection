@@ -1,0 +1,10 @@
+split,design,fall_trials,no_matched_raw_trigger,matched_trigger_but_incomplete_window,matched_complete_candidates_all_rejected,detected
+train,pre100_post100,1048,19,0,296,733
+train,pre50_post150,1048,19,0,276,753
+train,pre100_post200,1048,19,0,155,874
+validation,pre100_post100,375,5,0,102,268
+validation,pre50_post150,375,5,0,81,289
+validation,pre100_post200,375,5,0,52,318
+test,pre100_post100,375,9,0,135,231
+test,pre50_post150,375,9,0,116,250
+test,pre100_post200,375,9,0,75,291

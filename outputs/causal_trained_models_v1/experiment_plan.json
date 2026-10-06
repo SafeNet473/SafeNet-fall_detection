@@ -1,0 +1,45 @@
+{
+  "features": [
+    "ga_C2",
+    "jerk_abs_mean",
+    "ga_parallel_peak"
+  ],
+  "preprocessing": "Frozen causal_event_study selection; 300-sample pre100_post200",
+  "training_target": "Fall trial AND trigger within +/-200 samples of evaluation-only raw impact proxy; other candidates negative",
+  "grids": {
+    "tree_depth": [
+      1,
+      2,
+      3
+    ],
+    "tree_min_samples_leaf": [
+      10,
+      25,
+      50,
+      100
+    ],
+    "logistic_C": [
+      0.01,
+      0.1,
+      1,
+      10
+    ]
+  },
+  "class_weight": "balanced",
+  "selection": "Max validation trial BA; ties event precision, then fewer ADL alarms/hour; model ties simpler depth/node count or smaller C",
+  "threshold": ">= positive probability; all unique validation scores plus no-alarm boundary; threshold ties higher value",
+  "no_test_access": true,
+  "train_only_scaler": true,
+  "no_refit_on_validation": true,
+  "substantial_degradation": "Validation trial BA lower than frozen causal reference by >=0.05; also flag sensitivity drop >=0.05 separately",
+  "input_sha256": {
+    "outputs\\causal_event_study\\selection.json": "4d582446e7e52c220bcd0c3684cc25878c4644544fd2e326e114e0a53a375338",
+    "processed\\baseline_v2\\split_subjects.json": "1ba0d067a5755ebd7b706152b0e7839913d099a043aa89823bd0115fa5d1979c",
+    "outputs\\simplified_decision_tree\\simplified_tree.json": "b5ca1e63be6b7923ffa7a61b79dc8fca9b113a04b739d37a88b3aa4053231a9a",
+    "outputs\\sisfall\\train_causal_models.py": "139d3cef06b43d89c34d8598be1917299672b60432d9149fa9c6d144b121a770",
+    "outputs\\causal_event_study\\train_events.csv": "1fec70e738f9bb071441f89b98fb98fdc24e7d8ff7b140814bf531303cd003b3",
+    "outputs\\causal_event_study\\train_trial_results.csv": "4679f3539172ff00464c3a03af0d92f7ca5ff45a7ad66e53c88f3e68f3545a1b",
+    "outputs\\causal_event_study\\validation_events.csv": "c3e3f8f9a9cac15adc439022f079f2b47702802d1259be45288174361263df6e",
+    "outputs\\causal_event_study\\validation_trial_results.csv": "58cbf89a18175a6b3225a50fd9ab85a8edff1c1a557be16d3f9bb90434f8dc69"
+  }
+}

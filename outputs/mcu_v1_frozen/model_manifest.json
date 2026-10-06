@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "baseline_id": "MCU_v1",
+  "status": "algorithm frozen for implementation; hardware parity unresolved",
+  "final_hardware_operating_threshold": null,
+  "final_hardware_operating_threshold_status": "NOT FROZEN",
+  "excluded_feature_expansions": [
+    5,
+    7
+  ],
+  "input": {
+    "sensor": "ADXL345",
+    "columns_one_based": [
+      1,
+      2,
+      3
+    ],
+    "axes": [
+      "x",
+      "y",
+      "z"
+    ],
+    "accelerometer_only": true,
+    "gyroscope_used": false,
+    "sampling_rate_hz": 200,
+    "units": "g",
+    "raw_counts_to_g": 0.00390625,
+    "range_plus_minus_g": 16,
+    "resolution_bits": 13,
+    "placement": "SisFall waist"
+  },
+  "acceleration_filter": {
+    "family": "Butterworth",
+    "order": 4,
+    "cutoff_hz": 5,
+    "sampling_rate_hz": 200,
+    "realization": "two cascaded direct-form-II-transposed SOS per axis",
+    "sos_column_order": [
+      "b0",
+      "b1",
+      "b2",
+      "a0",
+      "a1",
+      "a2"
+    ],
+    "sos": [
+      [
+        3.123897691708262e-05,
+        6.247795383416523e-05,
+        3.123897691708262e-05,
+        1.0,
+        -1.7259333950369407,
+        0.7474473719077911
+      ],
+      [
+        1.0,
+        2.0,
+        1.0,
+        1.0,
+        -1.863800492075235,
+        0.8870329996526946
+      ]
+    ],
+    "initialization": "sosfilt_zi(SOS)[:,:,None] * first_raw_acceleration_g[None,None,:]",
+    "state_reset": "only at independent trial start; never per trigger/window",
+    "state_dtype": "float64",
+    "filtered_sample_interface": "cast float32 then float64 before derived scalar calculations",
+    "section_update": [
+      "y=b0*x+z1",
+      "z1_new=b1*x-a1*y+z2",
+      "z2_new=b2*x-a2*y"
+    ],
+    "unit_constant_input_zi_per_section": [
+      [
+        0.005776887917447799,
+        -0.00431003020598291
+      ],
+      [
+        0.99419187310563,
+        -0.8812248727583252
+      ]
+    ]
+  },
+  "gravity": {
+    "input": "raw unfiltered acceleration in g",
+    "alpha": 0.01558523664828626,
+    "nominal_cutoff_hz": 0.5,
+    "alpha_definition": "1-exp(-2*pi*0.5/200)",
+    "equation": "G[t]=alpha*r[t]+(1-alpha)*G[t-1]",
+    "initialization": "G[-1]=r[0]",
+    "state_reset": "trial start only",
+    "state_dtype": "float64",
+    "normalization_floor_g": 1e-08,
+    "unit_equation": "u=G/max(sqrt(G dot G),1e-8)"
+  },
+  "derived_streams": {
+    "m": "sqrt(a dot a)",
+    "p": "a dot u (signed)",
+    "b": "a-p*u",
+    "h": "sqrt(b dot b)",
+    "dtype": "float64"
+  },
+  "trigger": {
+    "magnitude_g": 1.1,
+    "absolute_magnitude_jerk_g_per_s": 5.0,
+    "jerk": "j[t]=200*abs(m[t]-m[t-1]); j[0]=0",
+    "condition": "H[t]=(m[t]>=1.1) OR (j[t]>=5.0)",
+    "edge": "H[t] AND NOT H[t-1]",
+    "initial_high": false,
+    "refractory_samples": 300,
+    "refractory_seconds": 1.5,
+    "accepted_when": "rising edge AND t-last_accepted_trigger>=300",
+    "initial_last_accepted_trigger": -300,
+    "refractory_edges": "discard, do not queue; staying high does not retrigger",
+    "incomplete_window_trigger": "accepted trigger still updates refractory state"
+  },
+  "window": {
+    "name": "pre100_post200",
+    "pre_samples": 100,
+    "trigger_and_post_samples": 200,
+    "total_samples": 300,
+    "nominal_duration_seconds": 1.5,
+    "start_offset": -100,
+    "end_offset_exclusive": 200,
+    "sample_offsets_included": "-100 through +199",
+    "decision_offset_samples": 200,
+    "post_trigger_delay_seconds": 1.0,
+    "decision_sample_excluded": true,
+    "reference_ring_rows": 301,
+    "reference_ring_channels": [
+      "m",
+      "h",
+      "abs(p)"
+    ],
+    "boundary_rule": "require k>=100 and k+200<trial_length; otherwise discard; no padding/shifting"
+  },
+  "features": {
+    "order": [
+      "ga_C2",
+      "jerk_abs_mean",
+      "ga_parallel_peak"
+    ],
+    "definitions": {
+      "ga_C2": {
+        "equation": "max(h[i]), i=0..299",
+        "units": "g"
+      },
+      "jerk_abs_mean": {
+        "equation": "mean(abs(200*(m[i]-m[i-1]))), i=1..299",
+        "differences": 299,
+        "units": "g/s"
+      },
+      "ga_parallel_peak": {
+        "equation": "max(abs(p[i])), i=0..299",
+        "units": "g"
+      }
+    },
+    "dtype": "float64"
+  },
+  "scaler": {
+    "class_name": "StandardScaler",
+    "mean": [
+      0.4885001226818366,
+      4.842116154469659,
+      1.830923027297042
+    ],
+    "scale": [
+      0.3393389000402486,
+      4.666720996263801,
+      0.743175050800754
+    ],
+    "variance": [
+      0.11515088908052581,
+      21.7782848569694,
+      0.5523091561327033
+    ],
+    "with_mean": true,
+    "with_std": true,
+    "ddof": 0,
+    "n_features_in": 3,
+    "n_samples_seen": 12253,
+    "fit_partition": "train only"
+  },
+  "logistic": {
+    "class_name": "LogisticRegression",
+    "feature_order": [
+      "ga_C2",
+      "jerk_abs_mean",
+      "ga_parallel_peak"
+    ],
+    "coefficients": [
+      3.8564795859958036,
+      -4.541012509245931,
+      1.8653532808946023
+    ],
+    "intercept": -3.3544620174694724,
+    "classes": [
+      0,
+      1
+    ],
+    "n_features_in": 3,
+    "hyperparameters": {
+      "C": 10.0,
+      "class_weight": "balanced",
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": 0.0,
+      "max_iter": 5000,
+      "n_jobs": null,
+      "penalty": "deprecated",
+      "random_state": 473,
+      "solver": "liblinear",
+      "tol": 1e-08,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "equation": "z=intercept+sum_i(coefficients[i]*(x[i]-mean[i])/scale[i]); score=1/(1+exp(-z))",
+    "score_interpretation": "classifier score, not calibrated real-world fall probability",
+    "fit_partition": "train only"
+  },
+  "fused_raw_feature_equation": {
+    "status": "algebraic derivation only; not firmware or bitwise-parity certified",
+    "raw_feature_means": "unstandardized extracted features, not raw accelerometer counts",
+    "coefficients": [
+      11.36468464281104,
+      -0.9730627806722294,
+      2.5099783407485585
+    ],
+    "intercept": -8.790005992210238,
+    "derivation": "w_raw=w/scale; b_raw=intercept-sum(w_raw*mean)",
+    "binary_rule": "dot(w_raw,x)+b_raw >= log(tau/(1-tau)); sigmoid unnecessary in real arithmetic"
+  },
+  "documented_operating_points": {
+    "balanced_reference": {
+      "score_threshold": 0.8850929456953477,
+      "comparison": ">=",
+      "status": "documented operating point; not final hardware deployment threshold",
+      "derived_logit_threshold": 2.041569084741143,
+      "validation_metrics": {
+        "fall_event_sensitivity": 0.9333333333333333,
+        "event_precision": 0.9308510638297872,
+        "adl_false_alarms_per_hour": 4.889271580022436,
+        "adl_trial_specificity": 0.9772727272727273,
+        "trial_balanced_accuracy": 0.9553030303030303,
+        "detected_fall_trials": 350,
+        "missed_fall_trials": 25,
+        "emitted_positive_decisions": 376,
+        "adl_false_alarms": 15
+      }
+    },
+    "sensitivity_oriented_candidate": {
+      "score_threshold": 0.7742031648776018,
+      "comparison": ">=",
+      "status": "documented operating point; not final hardware deployment threshold",
+      "derived_logit_threshold": 1.2321986907376832,
+      "validation_metrics": {
+        "fall_event_sensitivity": 0.952,
+        "event_precision": 0.8707317073170732,
+        "adl_false_alarms_per_hour": 12.712106108058334,
+        "adl_trial_specificity": 0.9423076923076923,
+        "trial_balanced_accuracy": 0.9471538461538461,
+        "detected_fall_trials": 357,
+        "missed_fall_trials": 18,
+        "emitted_positive_decisions": 410,
+        "adl_false_alarms": 39
+      }
+    }
+  },
+  "evaluation": {
+    "matching": "fall-trial trigger within +/-200 samples of raw-magnitude argmax proxy; complete window required",
+    "matching_tolerance_samples": 200,
+    "one_credited_detection_per_fall_trial": true,
+    "duplicate_unmatched_alarms": "count against event precision, including fall-recording alarms",
+    "precision": "detected fall trials / all positive candidate decisions",
+    "trial_balanced_accuracy": "0.5*(fall-event sensitivity + fraction of ADL trials without alarm)",
+    "validation_fall_trials": 375,
+    "validation_adl_trials": 572,
+    "validation_adl_hours": 3.0679416666666666,
+    "validation_candidate_recall": 0.9866666666666667,
+    "unavoidable_no_matched_trigger_falls": 5
+  },
+  "subject_partitions": {
+    "train": [
+      "SA03",
+      "SA04",
+      "SA07",
+      "SA10",
+      "SA11",
+      "SA12",
+      "SA14",
+      "SA15",
+      "SA16",
+      "SA18",
+      "SA20",
+      "SA21",
+      "SA22",
+      "SE02",
+      "SE03",
+      "SE05",
+      "SE06",
+      "SE07",
+      "SE10",
+      "SE12",
+      "SE14",
+      "SE15"
+    ],
+    "validation": [
+      "SA05",
+      "SA08",
+      "SA09",
+      "SA13",
+      "SA19",
+      "SE08",
+      "SE09",
+      "SE11"
+    ],
+    "test": [
+      "SA01",
+      "SA02",
+      "SA06",
+      "SA17",
+      "SA23",
+      "SE01",
+      "SE04",
+      "SE13"
+    ]
+  },
+  "unresolved": [
+    "final hardware operating threshold",
+    "float32 firmware parity",
+    "wrist-domain validation",
+    "runtime",
+    "RAM high-water mark",
+    "power"
+  ]
+}
