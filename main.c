@@ -133,6 +133,15 @@ static void test_polling_mode(const struct device *dev)
 		}
 
 		prev_ms = now_ms;*/
+
+		/*int64_t now_us =
+			k_ticks_to_us_floor64(k_uptime_ticks());
+
+		if (prev_us >= 0) {
+			printf("dt = %lld us\n",
+				(long long)(now_us - prev_us));
+		}
+		*/
 	}
 }
 #endif
