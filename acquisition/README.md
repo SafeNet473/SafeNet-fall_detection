@@ -18,6 +18,47 @@ embedded/{filters,features,classifier,fall_detector}.c
 
 ## Target-facing use
 
+### Nordic/Zephyr acceleration already in m/s²
+
+Zephyr accelerometer channels return SI acceleration in **m/s²**, rather than
+signed raw register counts. Use `acquisition_push_lsm6dsox_ms2_sample()` for this
+representation. It divides each axis by **9.80665 m/s² per g**, then uses the
+same timestamp-aware adapter and frozen detector. For example, +9.80665 m/s²
+becomes +1 g. Gravity stays included; no magnitude normalization is performed.
+
+After a successful driver fetch/read, with `struct sensor_value accel[3]`
+obtained from `SENSOR_CHAN_ACCEL_XYZ`, call:
+
+```c
+/* Target code includes <zephyr/drivers/sensor.h> and "acquisition.h".
+ * state was initialized with confirmed range/ODR and timestamp units.
+ * acquisition_timestamp is the corresponding measurement/FIFO time. */
+AcquisitionResult result = acquisition_push_lsm6dsox_ms2_sample(
+    &state,
+    sensor_value_to_double(&accel[0]),
+    sensor_value_to_double(&accel[1]),
+    sensor_value_to_double(&accel[2]),
+    acquisition_timestamp);
+```
+
+Use the conversion helper on the complete `sensor_value`; reading only `val1`
+loses the fractional part. Do not cast these SI readings to `int16_t`, apply
+the raw-count sensitivity, or divide by 9.80665 again before this call.
+See the [Zephyr sensor API](https://docs.zephyrproject.org/latest/doxygen/html/group__sensor__interface.html).
+
+The existing `acquisition_push_lsm6dsox_sample()` remains for actual signed
+register counts. Choose one representation for a stream. Both entry points
+retain the explicit effective range/ODR, timestamp and discontinuity contract.
+Nonfinite or unrepresentable SI values return `TIMING_INVALID_SAMPLE`, clear
+timing/detector history and discard an incomplete event; the next valid sample
+anchors a new stream. Configuration remains valid unless hardware changes.
+
+Check stationary orientations on the board: acceleration magnitude should be
+about 9.81 m/s² before conversion and about 1 g afterward, with signs/axes
+following the mounting. This sanity check does not replace sensor validation.
+
+### Raw-register-count input
+
 After the driver has configured and read back the **effective** range/ODR, pass
 that configuration explicitly. The range enum is physical g, not register bits.
 The adapter retains all four conversion modes; this selected acquisition path

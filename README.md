@@ -7,9 +7,9 @@ This repository contains a portable C fall detector and a host-validated acquisi
 ```text
 LSM6DSOX: selected +/-16 g, nominal 208 Hz
         |
-raw signed XYZ counts + acquisition/FIFO timestamp
+raw signed XYZ counts OR driver m/s² + acquisition/FIFO timestamp
         |
-LSM6DSOX counts-to-g conversion
+counts-to-g OR m/s² / 9.80665 conversion
         |
 timestamp-aware linear timing adapter: 208 -> 200 Hz
         |
@@ -32,6 +32,11 @@ FALL / ADL (activities of daily living)
 ```
 
 ## Acquisition and logical time
+
+For Nordic/Zephyr readings already in **m/s²**, use
+`acquisition_push_lsm6dsox_ms2_sample()`: it converts each axis to g by dividing
+by 9.80665 before resampling. The existing `acquisition_push_lsm6dsox_sample()`
+accepts actual signed register counts only. See the [SI input example](acquisition/README.md#nordiczephyr-acceleration-already-in-ms²).
 
 The planned driver supplies signed LSM6DSOX XYZ counts, an acquisition/FIFO timestamp, and explicitly configured/read-back effective range and ODR. Register access, signed decoding, FIFO ordering, timestamp wrap extension and clock calibration belong to that driver. The current bridge accepts the selected effective +/-16 g and nominal 208 Hz configuration; it cannot verify hardware registers itself.
 
@@ -69,7 +74,7 @@ The training StandardScaler is algebraically folded into the Logistic Regression
 
 | Module | Responsibility |
 |---|---|
-| `sensor_adapters/lsm6dsox_input.*` | Explicit-range LSM6DSOX raw counts to g |
+| `sensor_adapters/lsm6dsox_input.*` | Explicit-range raw counts to g, or driver m/s² to g |
 | `acquisition/timing_adapter.*` | Timestamp-aware interpolation onto the 200 Hz grid |
 | `acquisition/acquisition.*` | Conversion/resampling orchestration, restart policy and bridge into the detector |
 | `embedded/filters.*` | Causal Butterworth filtering and gravity EMA |

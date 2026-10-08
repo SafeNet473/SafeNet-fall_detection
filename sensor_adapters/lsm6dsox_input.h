@@ -21,4 +21,10 @@ typedef enum {
 bool lsm6dsox_counts_to_g(int16_t x, int16_t y, int16_t z,
                          Lsm6dsoxRange configured_range, AccelSample *sample_g);
 
+/* For driver outputs already expressed in m/s^2 (e.g. Zephyr sensor values),
+ * NOT raw register counts. Divide each axis by standard gravity, 9.80665 m/s^2.
+ * Preserve gravity and signs. No range sensitivity is applied a second time.
+ * Reject nonfinite/unrepresentable output; leave sample_g unchanged on failure. */
+bool lsm6dsox_ms2_to_g(double x, double y, double z, AccelSample *sample_g);
+
 #endif

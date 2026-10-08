@@ -63,8 +63,17 @@ bool acquisition_reconfigure(AcquisitionState *state, const AcquisitionConfig *c
  * been confirmed again via acquisition_reconfigure. Returns event discarded. */
 bool acquisition_notify_discontinuity(AcquisitionState *state, AcquisitionDiscontinuity reason);
 
+/* Signed raw register counts only; NOT driver values expressed in m/s^2. */
 AcquisitionResult acquisition_push_lsm6dsox_sample(AcquisitionState *state,
                                                   int16_t raw_x, int16_t raw_y, int16_t raw_z,
                                                   uint64_t sensor_timestamp);
+
+/* Driver acceleration in m/s^2, gravity included. Converts to g before the
+ * same timing/detector path. Do not cast SI values to int16 register counts.
+ * Configuration/read-back and acquisition timestamp requirements still apply.
+ * Invalid values discard timing/history/active event and start a new stream. */
+AcquisitionResult acquisition_push_lsm6dsox_ms2_sample(AcquisitionState *state,
+                                                      double x_ms2, double y_ms2, double z_ms2,
+                                                      uint64_t sensor_timestamp);
 
 #endif

@@ -79,18 +79,12 @@ static void generated_sample(void *context, AccelSample sample,
     }
 }
 
-AcquisitionResult acquisition_push_lsm6dsox_sample(AcquisitionState *state,
-                                                  int16_t raw_x, int16_t raw_y, int16_t raw_z,
-                                                  uint64_t sensor_timestamp) {
+static AcquisitionResult push_sample_g(AcquisitionState *state, AccelSample sample,
+                                        uint64_t sensor_timestamp) {
     AcquisitionResult result = {TIMING_NOT_CONFIGURED, 0, false};
     TimingResult timing;
-    AccelSample sample;
 
     if (!state->configured) {
-        return result;
-    }
-    if (!lsm6dsox_counts_to_g(raw_x, raw_y, raw_z, state->config.effective_range, &sample)) {
-        result.active_event_discarded = acquisition_notify_discontinuity(state, ACQUISITION_FULL_SCALE_CHANGE);
         return result;
     }
     timing = timing_adapter_push(&state->timing, sample, sensor_timestamp, generated_sample, state);
@@ -102,4 +96,36 @@ AcquisitionResult acquisition_push_lsm6dsox_sample(AcquisitionState *state,
         result.active_event_discarded = restart_detector(state);
     }
     return result;
+}
+
+AcquisitionResult acquisition_push_lsm6dsox_sample(AcquisitionState *state,
+                                                  int16_t raw_x, int16_t raw_y, int16_t raw_z,
+                                                  uint64_t sensor_timestamp) {
+    AcquisitionResult result = {TIMING_NOT_CONFIGURED, 0, false};
+    AccelSample sample;
+    if (!state->configured) {
+        return result;
+    }
+    if (!lsm6dsox_counts_to_g(raw_x, raw_y, raw_z, state->config.effective_range, &sample)) {
+        result.active_event_discarded = acquisition_notify_discontinuity(state, ACQUISITION_FULL_SCALE_CHANGE);
+        return result;
+    }
+    return push_sample_g(state, sample, sensor_timestamp);
+}
+
+AcquisitionResult acquisition_push_lsm6dsox_ms2_sample(AcquisitionState *state,
+                                                      double x_ms2, double y_ms2, double z_ms2,
+                                                      uint64_t sensor_timestamp) {
+    AcquisitionResult result = {TIMING_NOT_CONFIGURED, 0, false};
+    AccelSample sample;
+    if (!state->configured) {
+        return result;
+    }
+    if (!lsm6dsox_ms2_to_g(x_ms2, y_ms2, z_ms2, &sample)) {
+        timing_adapter_reset(&state->timing);
+        result.status = TIMING_INVALID_SAMPLE;
+        result.active_event_discarded = restart_detector(state);
+        return result;
+    }
+    return push_sample_g(state, sample, sensor_timestamp);
 }
