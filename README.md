@@ -1,3 +1,60 @@
+# SafeNet — Wearable Fall Detection
+
+SafeNet is a team project for EECS 473: Advanced Embedded Systems at the University of Michigan. We are developing a wearable fall-detection prototype that processes accelerometer data locally on an nRF5340 using Zephyr RTOS.
+
+This repository contains the algorithm development, portable C implementation, and host validation. Hardware integration is maintained separately in private team repositories.
+
+## Demo
+
+**[Watch the prototype demo](REPLACE_WITH_VIDEO_URL)**
+
+The video demonstrates [describe the test performed and the visible detection output].
+
+This is a prototype demonstration. Real-world detection accuracy across fall types, daily activities, and wearing positions is still being evaluated.
+
+## My Contributions — Richard Chang
+
+I contributed to the fall-detection algorithm and its integration into the embedded prototype, including:
+
+- Evaluating acceleration features and lightweight classifiers using the SisFall dataset.
+- Porting the selected pipeline to portable C, including causal filtering, streaming feature extraction, event handling, and classification.
+- Validating the C implementation against the Python reference.
+- Integrating the pipeline with nRF5340/Zephyr sensor acquisition and contributing to hardware debugging and system integration.
+
+These contributions are part of a collaborative team project.
+
+## Embedded Implementation
+
+The Nordic firmware acquires accelerometer samples through an I²C hardware FIFO and passes them through a sample queue to the detection pipeline. A timing adapter converts the nominal 208 Hz input to a uniform 200 Hz processing stream.
+
+The implementation includes:
+
+- Streaming inference without an external ML runtime.
+- FIFO and queue diagnostics for detecting acquisition problems.
+- Detector resets following known sample loss or stream discontinuities.
+- UART output for classification results, features, and diagnostic counters.
+
+In the documented Nordic implementation, fall decisions use acceleration only; barometer readings are collected separately for telemetry.
+
+## Validation and Current Status
+
+Host replay validation covered **56,999 samples from seven recordings**, with **264 classification decisions matching the Python reference** across two documented operating points. These results establish host implementation consistency, rather than real-world detection accuracy.
+
+Hardware integration and prototype testing are ongoing. Target resource usage and detection performance across representative real-world activities have not yet been fully characterized.
+
+## Repository Guide
+
+- `embedded/`: portable C filtering, feature extraction, classifier, and event state machine.
+- `acquisition/`: input conversion, timing adaptation, and stream restart handling.
+- `sensor_adapters/`: sensor input conversion.
+- `tests/` and `tools/`: replay tests and validation utilities.
+- `outputs/`: experiment results, model documentation, and validation reports.
+
+The following sections describe the algorithm and acquisition interfaces in detail.
+
+---
+
+
 # Fall-detection pipeline
 
 This repository contains a portable C fall detector and a host-validated acquisition bridge for the selected LSM6DSOX prototype. The bridge adapts nominal 208 Hz sensor measurements to the frozen detector's exact 200 Hz input contract. The hardware driver and live target integration remain to be implemented and validated.
