@@ -8,7 +8,7 @@ This repository contains the algorithm development, portable C detection pipelin
 
 **[Watch the prototype demo](https://drive.google.com/file/d/1_khGQGUkrOEyt7mjG0K-89TAA9hnMUFj/view?usp=drive_link)**
 
-[The video demonstrates a staged fall detected by the prototype. The detection result is relayed through an anchor node to a laptop, where an alert is displayed.]
+The video demonstrates a staged fall detected by the prototype. The detection result is relayed through an anchor node to a laptop, where an alert is displayed.
 
 The demo illustrates prototype functionality. Detection performance across representative falls, daily activities, and wearing positions is still being evaluated.
 
