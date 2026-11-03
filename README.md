@@ -1,175 +1,94 @@
 # SafeNet — Wearable Fall Detection
 
-SafeNet is a team project for EECS 473: Advanced Embedded Systems at the University of Michigan. We are developing a wearable fall-detection prototype that processes accelerometer data locally on an nRF5340 using Zephyr RTOS.
+SafeNet is a team project for **EECS 473: Advanced Embedded Systems at the University of Michigan**. We are developing a wearable prototype that detects falls by processing accelerometer data locally on an **nRF5340 running Zephyr RTOS**.
 
-This repository contains the algorithm development, portable C implementation, and host validation. Hardware integration is maintained separately in private team repositories.
+This repository contains the algorithm development, portable C detection pipeline, and host validation. Nordic firmware and broader system integration are maintained separately in private team repositories.
 
 ## Demo
 
-**[Watch the prototype demo](REPLACE_WITH_VIDEO_URL)**
+**[Watch the prototype demo](https://drive.google.com/file/d/1_khGQGUkrOEyt7mjG0K-89TAA9hnMUFj/view?usp=drive_link)**
 
-The video demonstrates [describe the test performed and the visible detection output].
+[The video demonstrates a staged fall detected by the prototype. The detection result is relayed through an anchor node to a laptop, where an alert is displayed.]
 
-This is a prototype demonstration. Real-world detection accuracy across fall types, daily activities, and wearing positions is still being evaluated.
+The demo illustrates prototype functionality. Detection performance across representative falls, daily activities, and wearing positions is still being evaluated.
 
 ## My Contributions — Richard Chang
 
-I contributed to the fall-detection algorithm and its integration into the embedded prototype, including:
+My work focuses on the fall-detection algorithm and its integration into the embedded prototype. I contributed to:
 
 - Evaluating acceleration features and lightweight classifiers using the SisFall dataset.
-- Porting the selected pipeline to portable C, including causal filtering, streaming feature extraction, event handling, and classification.
-- Validating the C implementation against the Python reference.
-- Integrating the pipeline with nRF5340/Zephyr sensor acquisition and contributing to hardware debugging and system integration.
+- Implementing the streaming detection pipeline in portable C.
+- Validating the C implementation against the Python reference through replay tests.
+- Integrating the detector with Nordic/Zephyr sensor acquisition and debugging the embedded data pipeline.
+- Collaborating on the combined accelerometer/barometer detection logic and integration into the broader SafeNet system.
+SafeNet is a collaborative project; these contributions describe my role within the team.
 
-These contributions are part of a collaborative team project.
+## System Architecture
 
-## Embedded Implementation
+The integrated prototype combines accelerometer and barometer measurements in its detection logic. The table below describes the acceleration-based pipeline contained in this repository. Barometer decision logic and Bluetooth Mesh communication are maintained in the private system integration repositories.
 
-The Nordic firmware acquires accelerometer samples through an I²C hardware FIFO and passes them through a sample queue to the detection pipeline. A timing adapter converts the nominal 208 Hz input to a uniform 200 Hz processing stream.
+| Stage | Implementation |
+|---|---|
+| Acquisition | Accelerometer configured at nominal 208 Hz and ±16 g; hardware FIFO and a sample queue in the Nordic firmware |
+| Input adaptation | Raw counts converted to g, followed by linear interpolation onto a uniform 200 Hz grid |
+| Preprocessing | Causal fourth-order 5 Hz Butterworth filter and a separate gravity estimate |
+| Event detection | Magnitude/jerk trigger with a 1.5-second refractory interval |
+| Feature extraction | Streaming computation over 0.5 seconds before and 1 second following the trigger |
+| Classification | Logistic regression score and threshold comparison |
+| Diagnostics | UART classification results, features, acquisition statistics, and error counters |
 
-The implementation includes:
+The portable acquisition interface accepts timestamps. The current Nordic implementation reconstructs nominal sample times from FIFO sequence numbers; it does not measure or correct sensor clock drift.
 
-- Streaming inference without an external ML runtime.
-- FIFO and queue diagnostics for detecting acquisition problems.
-- Detector resets following known sample loss or stream discontinuities.
-- UART output for classification results, features, and diagnostic counters.
+Known sample loss or stream discontinuities reset the processing state and discard incomplete events.
 
-In the documented Nordic implementation, fall decisions use acceleration only; barometer readings are collected separately for telemetry.
+## Features and Classifier
+
+The acceleration-based classifier uses three features
+
+- **`ga_C2`** — peak acceleration magnitude perpendicular to the estimated gravity direction.
+- **`jerk_abs_mean`** — mean absolute rate of change of acceleration magnitude.
+- **`ga_parallel_peak`** — peak absolute acceleration parallel to the estimated gravity direction.
+
+Training-time feature scaling is folded into the classifier coefficients. Runtime inference requires a linear score and threshold comparison, with **no external ML runtime or dynamic memory allocation in the portable detection core**.
+
+The core processes samples incrementally without retaining a complete event window. A completed event produces a decision approximately **one second after its trigger**, plus acquisition and processing delays.
 
 ## Validation and Current Status
 
-Host replay validation covered **56,999 samples from seven recordings**, with **264 classification decisions matching the Python reference** across two documented operating points. These results establish host implementation consistency, rather than real-world detection accuracy.
+### Host validation
 
-Hardware integration and prototype testing are ongoing. Target resource usage and detection performance across representative real-world activities have not yet been fully characterized.
+Python-to-C replay validation covered **56,999 samples from seven recordings**. Across two documented operating points, all **264 classification decisions matched**, along with trigger and event indices.
 
-## Repository Guide
+The mixed/double-precision implementation serves as the numerical reference. The float32 build passed behavioral regression on the documented suite but did not achieve strict numerical parity with that reference.
 
-- `embedded/`: portable C filtering, feature extraction, classifier, and event state machine.
-- `acquisition/`: input conversion, timing adaptation, and stream restart handling.
-- `sensor_adapters/`: sensor input conversion.
-- `tests/` and `tools/`: replay tests and validation utilities.
-- `outputs/`: experiment results, model documentation, and validation reports.
+These checks establish implementation consistency on the tested inputs. They do not establish real-world detection accuracy or validate timing and resource usage on the nRF5340.
 
-The following sections describe the algorithm and acquisition interfaces in detail.
+### Hardware prototype
 
----
+The integrated SafeNet prototype combines accelerometer and barometer measurements in its fall-detection logic. The system also includes Bluetooth Mesh communication, implemented by other team members.
 
+My contributions focus on the detection pipeline, sensor integration, and system debugging. The public repository contains the portable acceleration-based core and host validation; the combined detection logic and communication integration are maintained in private team repositories.
 
-# Fall-detection pipeline
+The prototype is operational, while quantitative evaluation of detection accuracy, false alarms, and target resource usage is ongoing.
 
-This repository contains a portable C fall detector and a host-validated acquisition bridge for the selected LSM6DSOX prototype. The bridge adapts nominal 208 Hz sensor measurements to the frozen detector's exact 200 Hz input contract. The hardware driver and live target integration remain to be implemented and validated.
+## Code and Technical Documentation
 
-## End-to-end architecture
-
-```text
-LSM6DSOX: selected +/-16 g, nominal 208 Hz
-        |
-raw signed XYZ counts OR driver m/s² + acquisition/FIFO timestamp
-        |
-counts-to-g OR m/s² / 9.80665 conversion
-        |
-timestamp-aware linear timing adapter: 208 -> 200 Hz
-        |
-uniform 200 Hz XYZ acceleration in g, gravity included
--------- frozen detector boundary --------------------
-        |
-causal 4th-order 5 Hz Butterworth + raw-input 0.5 Hz gravity EMA
-        |
-magnitude / gravity-aligned scalar streams
-        |
-magnitude/jerk rising-edge trigger + 1.5 s refractory
-        |
-100 pre-trigger + 200 trigger/post-trigger samples
-        |
-[ga_C2, jerk_abs_mean, ga_parallel_peak]
-        |
-frozen Logistic Regression score + selected threshold
-        |
-FALL / ADL (activities of daily living)
-```
-
-## Acquisition and logical time
-
-For Nordic/Zephyr readings already in **m/s²**, use
-`acquisition_push_lsm6dsox_ms2_sample()`: it converts each axis to g by dividing
-by 9.80665 before resampling. The existing `acquisition_push_lsm6dsox_sample()`
-accepts actual signed register counts only. See the [SI input example](acquisition/README.md#nordiczephyr-acceleration-already-in-ms²).
-
-The planned driver supplies signed LSM6DSOX XYZ counts, an acquisition/FIFO timestamp, and explicitly configured/read-back effective range and ODR. Register access, signed decoding, FIFO ordering, timestamp wrap extension and clock calibration belong to that driver. The current bridge accepts the selected effective +/-16 g and nominal 208 Hz configuration; it cannot verify hardware registers itself.
-
-Counts are converted to g before rate adaptation. The timing adapter anchors a uniform 5 ms grid at the first valid measurement. Once a second measurement arrives, it generates grid samples bracketed by the previous and current measurements, using the same linear interpolation factor for all three axes. It neither extrapolates nor flushes an incomplete bracket at EOF.
-
-Three times have different meanings:
-
-- **Logical sample time:** the exact 200 Hz grid position used by the detector.
-- **Physical measurement time:** the sensor's acquisition timestamp. The later bracketing measurement determines the earliest availability of an interpolated sample.
-- **Processing time:** when software handles the data, potentially later because of FIFO, transport or scheduling delays.
-
-The acquisition boundary is sensor-specific; its timing adapter is portable and independent of sensor registers. Linear interpolation satisfies the timing contract but is not an anti-aliasing guarantee. See the [acquisition README](acquisition/README.md) and [sensor input contract](sensor_adapters/INPUT_CONTRACT.md) for configuration and timing details.
-
-## Frozen detector contract and processing
-
-The detector accepts **XYZ acceleration in g, with gravity included, at an exact logical rate of 200 Hz**. It does not know the IMU model, original ODR, register configuration, raw count representation, or SPI/I2C/FIFO implementation.
-
-Within each independent stream, causal Butterworth filters run continuously. A separate gravity EMA follows the **raw** input, providing the gravity direction. Filtered acceleration produces magnitude, signed gravity-parallel acceleration and perpendicular magnitude.
-
-A rising edge of the magnitude/jerk candidate condition can accept a trigger, subject to a 1.5 s refractory interval. For trigger index `k`, the event window is `[k - 100, k + 200)`: exactly 300 samples, including the trigger and ending at `k + 199`. Classification is emitted when sample `k + 200` arrives; that arriving sample is excluded from the completed event. Events require full prehistory and posthistory, with no padding or EOF completion. Features accumulate as samples arrive, without retaining a full event buffer.
-
-See the [embedded README](embedded/README.md) and [model freeze](outputs/mcu_v1_frozen/MODEL_FREEZE.md) for the API and frozen parameters.
-
-## Features and classifier
-
-The frozen feature order is:
-
-1. `ga_C2`: peak acceleration magnitude perpendicular to the estimated gravity direction.
-2. `jerk_abs_mean`: mean absolute rate of change of acceleration magnitude over the 299 differences within the event.
-3. `ga_parallel_peak`: peak absolute gravity-parallel acceleration, including gravity.
-
-The training StandardScaler is algebraically folded into the Logistic Regression weights and intercept. Runtime classification is a linear logit score followed by a threshold comparison; no scikit-learn or ML runtime is required on target. Existing operating points are available, but the final hardware operating threshold is not yet frozen.
-
-## Main module boundaries
-
-| Module | Responsibility |
+| Location | Contents |
 |---|---|
-| `sensor_adapters/lsm6dsox_input.*` | Explicit-range raw counts to g, or driver m/s² to g |
-| `acquisition/timing_adapter.*` | Timestamp-aware interpolation onto the 200 Hz grid |
-| `acquisition/acquisition.*` | Conversion/resampling orchestration, restart policy and bridge into the detector |
-| `embedded/filters.*` | Causal Butterworth filtering and gravity EMA |
-| `embedded/features.*` | Streaming feature extraction |
-| `embedded/classifier.*` | Frozen Logistic Regression score and threshold comparison |
-| `embedded/fall_detector.*` | Trigger/event state machine and detector orchestration |
-| `embedded/model_params.h` | Frozen filter, trigger and classifier constants |
+| [`embedded/`](embedded/) | Portable C filters, streaming features, classifier, and event state machine |
+| [`acquisition/`](acquisition/) | Input adaptation, timing, and restart handling |
+| [`sensor_adapters/`](sensor_adapters/) | Sensor input conversion and input contract |
+| [`tests/`](tests/) | Host replay and interface tests |
+| [`tools/`](tools/) | Model export and validation utilities |
+| [`outputs/`](outputs/) | Experiment results, model artifacts, and validation reports |
 
-The main call flow is:
+Further details:
 
-```text
-driver (planned)
-  -> acquisition_push_lsm6dsox_sample()
-       -> counts-to-g
-       -> timing_adapter_push()
-            -> generated_sample() callback, for each 200 Hz output
-                 -> fall_detector_push_sample()
-                      -> preprocessing -> trigger -> features -> classifier
-```
-
-## Discontinuities
-
-Duplicate/reversed timestamps and excessive gaps reset the stream and discard incomplete events. The adapter does not interpolate across rejected regions. Sensor reset, ODR change or full-scale change must be explicitly reported by the driver; input then remains blocked until fresh configuration/read-back and reconfiguration. Each restart initializes a new independent detector stream. Detailed restart semantics remain in the [acquisition documentation](acquisition/README.md) and tests.
-
-## Validation status
-
-Host comparisons of the Python causal reference and portable mixed/double C core matched trigger/event indices and classifier decisions, with numerical differences near floating-point rounding. Float32 passed behavioral regression on the current suite, including accepted triggers, event windows and labels, but **did not pass strict numerical parity** with the mixed-precision reference. See the [core verification](outputs/portable_c_verification/REPORT.md), [host pipeline validation](outputs/host_pc_validation/REPORT.md) and [float/sensor-contract validation](outputs/sensor_contract_validation/REPORT.md).
-
-Strategy A, timestamp-aware 208 -> 200 Hz adaptation, is the selected prototype path. The integrated acquisition implementation passed host comparisons against the earlier Strategy-A behavior and a same-input standalone C detector oracle. The [acquisition validation report](outputs/acquisition_validation/REPORT.md) documents a tiny endpoint-rounding difference in the older interpolation formula and separate quantization/clipping effects when constructing raw-count proxy inputs. Equivalence claims apply to corresponding inputs, not arbitrary sensor representations.
-
-These tests use reconstructed recordings and synthetic inputs. They do **not** validate real LSM6DSOX timestamp accuracy, sensor noise/bias/saturation, nRF5340 runtime/RAM/stack, power behavior or live hardware performance.
-
-## Current prototype decisions
-
-- Sensor: LSM6DSOX; selected effective accelerometer range: +/-16 g.
-- Sensor ODR: nominal 208 Hz; detector rate: fixed 200 Hz.
-- Rate adaptation: timestamp-aware linear interpolation.
-- Detector numeric deployment candidate: float32; numerical reference: mixed/double precision.
-- Final hardware classifier operating threshold: unresolved.
-
-Actual hardware configuration/read-back and real sensor/target validation remain pending. The separate [native-208 Hz experiment](experiments/sampling_rate/README.md) is exploratory and is not the selected deployment architecture.
+- [Detection core API and build instructions](embedded/README.md)
+- [Acquisition interface and timing semantics](acquisition/README.md)
+- [Sensor input contract](sensor_adapters/INPUT_CONTRACT.md)
+- [Frozen model specification](outputs/mcu_v1_frozen/MODEL_FREEZE.md)
+- [Python-to-C replay validation](outputs/host_pc_validation/REPORT.md)
+- [Portable C verification](outputs/portable_c_verification/REPORT.md)
+- [Float32 and sensor-contract validation](outputs/sensor_contract_validation/REPORT.md)
+- [Acquisition validation](outputs/acquisition_validation/REPORT.md)
